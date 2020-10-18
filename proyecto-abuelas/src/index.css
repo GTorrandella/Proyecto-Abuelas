@@ -13,14 +13,13 @@ code {
 }
 
 .header-undav {
-  width: 1003px;
-  height: 132px;
-  background: #2a3665 url(/banners/bannerUndav.jpg) no-repeat;
+  width: 100%;
+  height: 100%;
   margin: auto;
 }
 
-.hearder-abuelas {
-  width: 1003px;
-  height: 132px;
+.header-abuelas {
+  height: 100%;
+  width: 100%;
   margin: auto;
 }

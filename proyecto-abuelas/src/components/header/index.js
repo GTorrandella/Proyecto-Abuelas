@@ -10,8 +10,12 @@ class Header extends React.Component {
     
     return (
       <React.Fragment>
-        <header position="static" className='header-undav' />
-        <header position="static" className='header-abuelas'>Header Abuelas</header>
+        <header position="static" className='header-undav'>
+          <img src={'/banners/bannerUndav.jpg'}></img>
+        </header>
+        <header position="static" className='header-abuelas'>
+          <img src={'/banners/bannerAbuelas.png'}></img>
+        </header>
       </React.Fragment>
 
     );
