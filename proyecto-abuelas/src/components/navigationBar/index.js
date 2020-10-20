@@ -1,53 +1,30 @@
 import React from 'react';
-import {
-  AppBar,
-  Toolbar,
-  IconButton,
-  Typography,
-  InputBase,
-  ButtonBase,
-  Container
- } from '@material-ui/core';
-import MenuIcon from '@material-ui/icons/Menu';
-import SearchIcon from '@material-ui/icons/Search';
-import {
-  Col,  Row,
-} from 'reactstrap';
 
-class NavigationBar extends React.Component {
+import Toolbar from '@material-ui/core/Toolbar'
+import NavigationItem from './navigationItem' 
 
-  render() {
-    return (
-      <React.Fragment>
+export default function NavigationBar() {
 
-        <Toolbar>
-            <Col xs='6' style={{margin: 'auto'}}>
-                <ButtonBase style={{
-                padding: '0 10px',}}
-                >
-                Proyectos
-                </ButtonBase>
-                <ButtonBase style={{
-                padding: '0 10px',}}
-                >
-                Quienes somos
-                </ButtonBase>
-                <ButtonBase style={{
-                padding: '0 10px',}}
-                >
-                Contacto
-                </ButtonBase>
-            </Col>
-            <Col xs='6' style={{margin: 'auto'}}>
-                <ButtonBase>Botones redes sociales</ButtonBase>
-            </Col>
-        </Toolbar>
-
-      </React.Fragment>
-
-    );
-  }
-
+  return (
+    <Toolbar className={'navigation-bar'}>
+        <NavigationItem>
+          SOBRE EL PROYECTO
+        </NavigationItem>
+        <NavigationItem>
+          ACCIONES  
+        </NavigationItem>
+        <NavigationItem>
+          VIDEOS
+        </NavigationItem>
+        <NavigationItem>
+          ARCHIVOS
+        </NavigationItem>
+        <NavigationItem>
+          CONTACTO/SUMATE
+        </NavigationItem>
+        <NavigationItem>
+          LINKS
+        </NavigationItem>
+    </Toolbar>
+  );
 }
-
-export default NavigationBar;

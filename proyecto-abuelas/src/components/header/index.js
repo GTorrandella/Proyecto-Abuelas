@@ -11,10 +11,15 @@ class Header extends React.Component {
     return (
       <React.Fragment>
         <header position="static" className='header-undav'>
-          <img src={'/banners/bannerUndav.jpg'}></img>
+          <img 
+            src={'/banners/bannerUndav.jpg'} 
+            alt={'UNDAV #UNDAVA10Años'}
+            />
         </header>
         <header position="static" className='header-abuelas'>
-          <img src={'/banners/bannerAbuelas.png'}></img>
+          <img
+            src={'/banners/bannerAbuelas.png'}
+            alt={'PROYECTO DE EXTENCIÓN. La UNDAV con las ABUELAS por la identidad'} />
         </header>
       </React.Fragment>
 
