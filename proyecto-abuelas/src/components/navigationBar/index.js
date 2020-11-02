@@ -1,30 +1,53 @@
 import React from 'react';
 
-import Toolbar from '@material-ui/core/Toolbar'
-import NavigationItem from './navigationItem' 
+import Grid from '@material-ui/core/Grid'
+import NavigationItem from './navigationItem'
+import {
+  aboutUsStyte,
+  actionsStyle,
+  videosStyle,
+  filesStyle,
+  contactUsStyle,
+  linksStyle,
+} from '../../styles/navigationBar'
+
 
 export default function NavigationBar() {
 
   return (
-    <Toolbar className={'navigation-bar'}>
-        <NavigationItem>
-          SOBRE EL PROYECTO
-        </NavigationItem>
-        <NavigationItem>
-          ACCIONES  
-        </NavigationItem>
-        <NavigationItem>
-          VIDEOS
-        </NavigationItem>
-        <NavigationItem>
-          ARCHIVOS
-        </NavigationItem>
-        <NavigationItem>
-          CONTACTO/SUMATE
-        </NavigationItem>
-        <NavigationItem>
-          LINKS
-        </NavigationItem>
-    </Toolbar>
+    <div className={'navigation-bar'}>
+      <Grid container spacing={0}>
+        <Grid item xs className={aboutUsStyte().root}>
+          <NavigationItem>
+            SOBRE EL PROYECTO
+          </NavigationItem>
+        </Grid>
+        <Grid item xs className={actionsStyle().root}>
+          <NavigationItem>
+            ACCIONES
+          </NavigationItem>
+        </Grid>
+        <Grid item xs className={videosStyle().root}>
+          <NavigationItem>
+            VIDEOS
+          </NavigationItem>
+        </Grid>
+        <Grid item xs className={filesStyle().root}>
+          <NavigationItem>
+            ARCHIVOS
+          </NavigationItem>
+        </Grid>
+        <Grid item xs className={contactUsStyle().root}>
+          <NavigationItem>
+            CONTACTO/SUMATE
+          </NavigationItem>
+        </Grid>
+        <Grid item xs className={linksStyle().root}>
+          <NavigationItem>
+            LINKS
+          </NavigationItem>
+        </Grid>
+      </Grid>
+    </div>
   );
 }

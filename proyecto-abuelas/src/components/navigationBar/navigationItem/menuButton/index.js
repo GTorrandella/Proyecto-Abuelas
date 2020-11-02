@@ -8,6 +8,7 @@ export default function MenuButton(props) {
       <MenuItem
         style={{
           fontFamily: 'Anton',
+          backgroundColor: 'inherit'
         }}>
         {props.children}
       </MenuItem> 
