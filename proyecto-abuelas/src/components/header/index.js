@@ -1,31 +1,41 @@
 import React from 'react';
-import {
-  Toolbar,
-  Typography,
- } from '@material-ui/core';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Box from '@material-ui/core/Box';
+import Typography from '@material-ui/core/Typography';
+import { headerStyle } from '../../styles/header'
 
-class Header extends React.Component {
+export default function Header() {
+  
+  const classes = headerStyle()
 
-  render() {
-    
-    return (
-      <React.Fragment>
-        <header position="static" className='header-undav'>
+  return (
+    <div>
+      <AppBar position="static">
+        <Toolbar className='header-undav'>
           <img 
-            src={'/banners/bannerUndav.jpg'} 
-            alt={'UNDAV #UNDAVA10Años'}
+            src={'/banners/logoUndav.png'} 
+            alt={'UNDAV Universidad Nacional de Avellaneda'}
             />
-        </header>
-        <header position="static" className='header-abuelas'>
+          <Box display='flex' flexGrow={1}>
+            <div className={classes.textBox}>
+              <div className='row'>
+                <Typography className={classes.textTop}>
+                  Secretaria de Extención
+                </Typography>
+              </div>
+              <div className='row'>
+                <Typography className={classes.textBottom}>
+                  La UNDAV con las ABUELAS por la identidad
+                </Typography>
+              </div>
+            </div>
+          </Box>
           <img
-            src={'/banners/bannerAbuelas.png'}
-            alt={'PROYECTO DE EXTENCIÓN. La UNDAV con las ABUELAS por la identidad'} />
-        </header>
-      </React.Fragment>
-
-    );
-  }
-
+            src={'/banners/logoAbuelas.png'}
+            alt={'Abuelas de Plaza de Mayo'} />
+        </Toolbar>
+      </AppBar>
+    </div>
+  );
 }
-
-export default Header;
