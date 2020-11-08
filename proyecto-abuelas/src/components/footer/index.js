@@ -1,50 +1,17 @@
 import React from 'react';
-import Typography from '@material-ui/core/Typography';
-import Link from '@material-ui/core/Link'
-import { makeStyles } from '@material-ui/core/styles';
+import FooterHead from './footerHead'
+import FooterBody from './footerBody'
+import {
+  footerHeadStyle,
+  footerBodyStyle,
+} from '../../styles/footer'
 
+export default function Footer() {
 
-class Footer extends React.Component {
-
-    useStyles =  makeStyles((theme) => ({
-        footer: {
-        backgroundColor: theme.palette.background.paper,
-        padding: theme.spacing(6),
-        },
-    }));
-
-    Copyright = () => {
-    return (
-        <Typography variant="body2" color="textSecondary" align="center">
-        {''}
-        <Link color="inherit" href="https://undav.edu.ar/">
-            UNDAV
-        </Link>{' '}
-        {new Date().getFullYear()}
-        {'.'}
-        </Typography>
-    );
-    }
-
-
-    render() {
-        const classes = this.useStyles;
-        return (
-            <React.Fragment>
-                {/* Footer */}
-                <footer className={classes.footer}>
-                    <Typography variant="h6" align="center" gutterBottom>
-                        Proyecto Abuelas
-                    </Typography>
-                    <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
-                        Secretaría de Extensión
-                    </Typography>
-                    {this.Copyright()}
-                </footer>
-                {/* End footer */}
-            </React.Fragment>
-        )
-    }
+  return (
+    <React.Fragment>
+      <FooterHead className={footerHeadStyle()}/>
+      <FooterBody className={footerBodyStyle()}/>
+    </React.Fragment>
+  );
 }
-
-export default Footer;

@@ -8,14 +8,14 @@ export default function LandingPage() {
   return (
     <React.Fragment>
       <div>
-        <Container className={classes.grid} maxWidth="ld">
+        <Container className={classes.grid} maxWidth="md">
           <img className={classes.image}
             src={'/landing/dibujoAbuelas.png'} 
-            alt={'UNDAV Universidad Nacional de Avellaneda'}
+            alt={'Abuelas de Plaza de Mayo'}
             />
           <img className={classes.image}
             src={'/landing/lemaAbuelas.png'} 
-            alt={'UNDAV Universidad Nacional de Avellaneda'}
+            alt={'Memoria, Verdad y Justicia'}
             />
         </Container>
       </div>

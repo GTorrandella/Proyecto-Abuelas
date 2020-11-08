@@ -12,7 +12,7 @@ export default function Header() {
   return (
     <div>
       <AppBar position="static">
-        <Toolbar className='header-undav'>
+        <Toolbar className='header'>
           <img 
             src={'/banners/logoUndav.png'} 
             alt={'UNDAV Universidad Nacional de Avellaneda'}
