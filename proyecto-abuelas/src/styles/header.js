@@ -8,9 +8,11 @@ export const headerStyle = makeStyles({
   },
   textTop: {
     fontFamily: 'Anton',
-    fontSize: '1.3rem'
+    fontSize: '1.3rem',
+    // color: '#373435'
   },
   textBottom:{
     fontFamily: 'Anton',
+    // color: '#373435'
   }
 });

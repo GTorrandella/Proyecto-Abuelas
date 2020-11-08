@@ -1,8 +1,7 @@
 import React from 'react';
-import logo from './logo.svg';
 import Header from './components/header';
 import NavigationBar from './components/navigationBar'
-import Album from './components/album'
+import LandingPage from './components/landingPage'
 import './App.css';
 import Footer from './components/footer';
 import { CssBaseline } from '@material-ui/core';
@@ -13,7 +12,7 @@ function App() {
       <CssBaseline/>
       <Header />
       <NavigationBar />
-      <Album />
+      <LandingPage />
       <Footer />
     </div>
   );
