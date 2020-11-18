@@ -17,16 +17,6 @@ export default function NavigationMenu(props) {
     }
   }
 
-  // return focus to the button when we transitioned from !open -> open
-  // prevOpen = React.useRef(open);
-  /*React.useEffect(() => {
-    if (prevOpen.current === true && open === false) {
-      anchorRef.current.focus();
-    }
-
-    prevOpen.current = open;
-  }, [open]);*/
-
   return (
     <React.Fragment>
       <Popper 
@@ -43,9 +33,7 @@ export default function NavigationMenu(props) {
             <Paper>
               <ClickAwayListener onClickAway={props.handleClose}>
                 <MenuList autoFocusItem={props.open} onKeyDown={handleListKeyDown}>
-                  <MenuButton onClick={props.handleClose}>Profile</MenuButton>
-                  <MenuButton onClick={props.handleClose}>My account</MenuButton>
-                  <MenuButton onClick={props.handleClose}>Logout</MenuButton>
+                  <MenuButton onClick={props.handleClose}>PLACEHOLDER</MenuButton>
                 </MenuList>
               </ClickAwayListener>
             </Paper>
