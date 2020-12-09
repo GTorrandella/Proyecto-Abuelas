@@ -13,7 +13,7 @@ values
     "Free Culture", 
     STR_TO_DATE('2019-10-02', '%Y-%m-%d'), 
     "Critical look to the US Copyright Law and historic use", 
-    "database/document/2019/freeculture.pdf", 
+    "/database/document/2019/freeculture.pdf", 
     "FILE"
   );
 
@@ -51,7 +51,7 @@ values
     "Understanding Comics - McCloud", 
     STR_TO_DATE('2020-06-02', '%Y-%m-%d'), 
     "A look into the comics lenguage, using the same language", 
-    "database/document/2020/Understanding Comics - McCloud.pdf",
+    "/database/document/2020/Understanding Comics - McCloud.pdf",
     "FILE"
   );
 
@@ -70,7 +70,7 @@ values
     "Shadow Play Girls - 1", 
     STR_TO_DATE('2020-06-02', '%Y-%m-%d'), 
     "かしら、かしら、ごぞんし　かしら？", 
-    "database/image/2020/315201.jpg",
+    "/database/image/2020/315201.jpg",
     "PHOTO"
   );
 
@@ -89,7 +89,7 @@ values
     "Shadow Play Girls - 2", 
     STR_TO_DATE('2020-06-02', '%Y-%m-%d'), 
     "I wonder, I wonder, do you know what I wonder?", 
-    "database/image/2020/315202.jpg",
+    "/database/image/2020/315202.jpg",
     "PHOTO"
   );
 
@@ -108,7 +108,7 @@ values
     "Utena - 1", 
     STR_TO_DATE('2019-03-20', '%Y-%m-%d'), 
     "Shoujo Kakumei Utena 1", 
-    "database/image/2019/498919.jpg",
+    "/database/image/2019/498919.jpg",
     "PHOTO"
   );
   
@@ -127,6 +127,44 @@ values
     "Utena - 2", 
     STR_TO_DATE('2019-03-25', '%Y-%m-%d'), 
     "Shoujo Kakumei Utena 2", 
-    "database/image/2019/498921.jpg",
+    "/database/image/2019/498921.jpg",
+    "PHOTO"
+  );
+  
+insert into 
+  Test.multimedia (
+    id_actividad, 
+    nombre, 
+    fecha, 
+    descripcion, 
+    archivo, 
+    tipo
+  )
+values
+  (
+    1, 
+    "Utena - 2", 
+    STR_TO_DATE('2019-03-25', '%Y-%m-%d'), 
+    "Shoujo Kakumei Utena 2", 
+    "https://soundcloud.com/user-721144974/entrevista-abuela-sonia-torres-2013",
+    "AUDIO"
+  );
+  
+insert into 
+  Test.multimedia (
+    id_actividad, 
+    nombre, 
+    fecha, 
+    descripcion, 
+    archivo, 
+    tipo
+  )
+values
+  (
+    1, 
+    "Utena - 2", 
+    STR_TO_DATE('2019-03-25', '%Y-%m-%d'), 
+    "Shoujo Kakumei Utena 2", 
+    "https://youtu.be/Y07GHrnVsQ0",
     "PHOTO"
   );
