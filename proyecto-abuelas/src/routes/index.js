@@ -13,27 +13,27 @@ import File from '../components/multimedia/file'
 
 export default function Navigation() {
 
-  return (
-      <React.Fragment>
-        <BrowserRouter>
-            <Switch>
-              <Route path="/audio">
-                <Base multimedia={<Audio />} activity={{}} />
-              </Route>
-              <Route path="/video">
-                <Base multimedia={<Video />} activity={{}} />
-              </Route>
-              <Route path="/imagen">
-                <Base multimedia={<Image />} activity={{}} />
-              </Route>
-              <Route path="/archivo">
-                <Base multimedia={<File />} activity={{}} />
-              </Route>
-              <Route path="/">
-                <LandingPage />
-              </Route>
-            </Switch>
-        </BrowserRouter>
-      </React.Fragment>
-  );
+    return (
+        <React.Fragment>
+            <BrowserRouter>
+                <Switch>
+                    <Route path="/audio/:id">
+                        <Base multimedia={<Audio />} activity={{}} />
+                    </Route>
+                    <Route path="/video/:id">
+                        <Base multimedia={<Video />} activity={{}} />
+                    </Route>
+                    <Route path="/imagen/:id">
+                        <Base multimedia={<Image />} activity={{}} />
+                    </Route>
+                    <Route path="/archivo/:id">
+                        <Base multimedia={<File />} activity={{}} />
+                    </Route>
+                    <Route path="/">
+                        <LandingPage />
+                    </Route>
+                </Switch>
+            </BrowserRouter>
+        </React.Fragment>
+    );
 }
