@@ -13,7 +13,7 @@ export default function Audio() {
             setData(result);
         };
         fetchData();
-    }, []);
+    }, [id]);
 
     return (
         <React.Fragment>

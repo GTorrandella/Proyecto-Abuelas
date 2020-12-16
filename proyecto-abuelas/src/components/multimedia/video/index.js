@@ -13,7 +13,7 @@ export default function Video() {
             setData(result);
         };
         fetchData();
-    }, []);
+    }, [id]);
 
     return (
         <React.Fragment>

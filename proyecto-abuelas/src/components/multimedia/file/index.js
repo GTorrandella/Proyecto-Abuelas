@@ -12,7 +12,7 @@ export default function File(props) {
             setData(result);
         };
         fetchData();
-    });
+    }, [id]);
 
     return (
         <React.Fragment>

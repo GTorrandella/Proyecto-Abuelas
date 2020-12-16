@@ -12,7 +12,7 @@ export default function Image(props) {
             setData(result);
         };
         fetchData();
-    }, []);
+    }, [id]);
 
     return (
         <React.Fragment>
