@@ -5,11 +5,10 @@ import {
   Route,
 } from "react-router-dom";
 import LandingPage from '../components/landingPage'
-import Base from '../components/multimediaTemplate'
-import Audio from '../components/multimedia/audio'
-import Video from '../components/multimedia/video'
-import Image from '../components/multimedia/image'
-import File from '../components/multimedia/file'
+import AudioPage from './audio'
+import FilePage from './file'
+import VideoPage from './video'
+import ImagePage from './image'
 
 export default function Navigation() {
 
@@ -18,16 +17,16 @@ export default function Navigation() {
             <BrowserRouter>
                 <Switch>
                     <Route path="/audio/:id">
-                        <Base multimedia={<Audio />} activity={{}} />
+                        <AudioPage />
                     </Route>
                     <Route path="/video/:id">
-                        <Base multimedia={<Video />} activity={{}} />
+                        <VideoPage />
                     </Route>
                     <Route path="/imagen/:id">
-                        <Base multimedia={<Image />} activity={{}} />
+                        <ImagePage />
                     </Route>
                     <Route path="/archivo/:id">
-                        <Base multimedia={<File />} activity={{}} />
+                        <FilePage />
                     </Route>
                     <Route path="/">
                         <LandingPage />

@@ -1,54 +1,32 @@
 import React from 'react';
-import ListSubheader from '@material-ui/core/ListSubheader';
 import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
-import Collapse from '@material-ui/core/Collapse';
-import ExpandLess from '@material-ui/icons/ExpandLess';
-import ExpandMore from '@material-ui/icons/ExpandMore';
+import Typography from '@material-ui/core/Typography';
+import Container from '@material-ui/core/Container';
+import SideItem from './sideItem'
 
 export default function SideNavegation(props) {
-
-    const { activity, videos, audios, photos, documents} = props.activity
-    const [open, setOpen] = React.useState(true);
-  
-    const handleClick = () => {
-      setOpen(!open);
-    };
-
+    
+    const { activity, sideElem } = props
+    const videoElem = sideElem ? sideElem.filter(elem => elem.tipo === 'VIDEO') : []
+    const audioElem = sideElem ? sideElem.filter(elem => elem.tipo === 'AUDIO') : []
+    const photoElem = sideElem ? sideElem.filter(elem => elem.tipo === 'PHOTO') : []
+    const fileElem = sideElem ? sideElem.filter(elem => elem.tipo === 'FILE') : []
+    
     return (
         <React.Fragment>
-            <List
-            component="nav"
-            style={{
-                borderLeftStyle: 'solid',
-                marginTop: '5px'
-            }}
-            >
-                <ListItem button>
-                    <ListItemText primary="Videos" />
-                </ListItem>
-                <ListItem button>
-                    <ListItemText primary="Audios" />
-                </ListItem>
-                <ListItem button onClick={handleClick}>
-                    <ListItemText primary="Fotos" />
-                    {open ? <ExpandLess /> : <ExpandMore />}
-                </ListItem>
-                <Collapse in={open} timeout="auto" unmountOnExit>
-                    <List component="div" 
-                        style={{
-                            paddingLeft: '15px'
-                        }}>
-                        <ListItem button>
-                            <ListItemText primary="Starred" />
-                        </ListItem>
-                    </List>
-                </Collapse>
-                <ListItem button>
-                    <ListItemText primary="Documentos" />
-                </ListItem>
-            </List>
+            <Container
+                style={{
+                    borderLeftStyle: 'solid',
+                    marginTop: '5px'
+                }}>
+                <Typography>{activity ? activity['nombre'] : ''}</Typography>
+                <List component="nav">
+                    <SideItem title="Videos" items={videoElem}/>
+                    <SideItem title="Audios" items={audioElem}/>
+                    <SideItem title="Fotos" items={photoElem}/>
+                    <SideItem title="Documentos" items={fileElem}/>
+                </List>
+            </Container>
         </React.Fragment>
   );
 }

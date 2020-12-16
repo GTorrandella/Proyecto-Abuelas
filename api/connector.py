@@ -13,7 +13,7 @@ class Connector:
         result = {}
         cursor = sefl._connection.cursor(dictionary=True)
         select_stmt = (
-            "SELECT nombre, descripcion, archivo " 
+            "SELECT nombre, descripcion, archivo, id " 
             "FROM multimedia "
             "WHERE id = %(key)s"
         )
@@ -26,7 +26,7 @@ class Connector:
         result = {}
         cursor = sefl._connection.cursor(dictionary=True)
         select_stmt = (
-            "SELECT nombre, descripcion, archivo, id " 
+            "SELECT nombre, descripcion, archivo, id, tipo " 
             "FROM multimedia "
             "WHERE id_actividad = %(key)s"
         )

@@ -1,19 +1,9 @@
-import React, {useState, useEffect} from 'react';
-import { useParams } from "react-router-dom";
-import { getMultimedia } from '../../../connector';
+import React from 'react';
 import ReactPlayer from 'react-player/soundcloud'
 
-export default function Audio() {
-    const { id } = useParams();
-    const [data, setData] = useState(null);
- 
-    useEffect(() => {
-        const fetchData = async () => {
-            const result = await getMultimedia(id)
-            setData(result);
-        };
-        fetchData();
-    }, [id]);
+export default function Audio(props) {
+
+    const { data } = props
 
     return (
         <React.Fragment>
