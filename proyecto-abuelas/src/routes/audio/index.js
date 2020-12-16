@@ -1,8 +1,12 @@
 import React, {useState, useEffect} from 'react';
 import { useParams } from "react-router-dom";
-import { getMultimedia } from '../../../connector';
+import {
+    getMultimedia,
+} from '../../connector';
+import Base from '../../components/multimediaTemplate'
+import Audio from '../../components/multimedia/audio'
 
-export default function File(props) {
+export default function AudioPage() {
     const { id } = useParams();
     const [data, setData] = useState(null);
  
@@ -16,10 +20,8 @@ export default function File(props) {
 
     return (
         <React.Fragment>
-            <object data={data ? data.archivo : ''} width="100%" height="100%">
-                <p><a href={data ? data.archivo : ''}></a></p>
-            </object>
-            <p style={{textAlign:'justify'}}>{data ? data.descripcion : ''}</p>
+            <Base multimedia={<Audio data={data}/>}
+            multimediaId={id}/>
         </React.Fragment>
     );
 }
