@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
@@ -7,7 +8,7 @@ import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 
 export default function SideItem(props) {
-    const { title, items } = props
+    const { title, items, path } = props
     const [open, setOpen] = React.useState(false);
   
     const handleClick = () => {
@@ -35,7 +36,9 @@ export default function SideItem(props) {
                                     paddingLeft: '15px'
                                 }}>
                                 <ListItem button>
-                                    <ListItemText primary={item.nombre}/>
+                                    <Link to={path + item.id}>
+                                        <ListItemText primary={item.nombre}/>
+                                    </Link>
                                 </ListItem>
                             </List>
                         )})

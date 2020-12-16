@@ -21,10 +21,10 @@ export default function SideNavegation(props) {
                 }}>
                 <Typography>{activity ? activity['nombre'] : ''}</Typography>
                 <List component="nav">
-                    <SideItem title="Videos" items={videoElem}/>
-                    <SideItem title="Audios" items={audioElem}/>
-                    <SideItem title="Fotos" items={photoElem}/>
-                    <SideItem title="Documentos" items={fileElem}/>
+                    <SideItem title="Videos" items={videoElem} path='/video/' />
+                    <SideItem title="Audios" items={audioElem} path='/audio/' />
+                    <SideItem title="Fotos" items={photoElem} path='/imagen/' />
+                    <SideItem title="Documentos" items={fileElem} path='/archivo/' />
                 </List>
             </Container>
         </React.Fragment>
