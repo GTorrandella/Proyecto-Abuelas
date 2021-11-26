@@ -37,3 +37,10 @@ export async function getActivityByMultimediaId(id){
     const responseJson = await response.json()
     return responseJson
 }
+
+export async function getTimeline(){
+    const url = "http://127.0.0.1:5000/timeline";
+    const response = await fetchWithTimeout(url, {})
+    const responseJson = await response.json()
+    return responseJson
+}

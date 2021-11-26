@@ -5,6 +5,7 @@ import {
   Route,
 } from "react-router-dom";
 import LandingPage from '../components/landingPage'
+import ActivitiesTimeline from '../components/activitiesTimeline'
 import AudioPage from './audio'
 import FilePage from './file'
 import VideoPage from './video'
@@ -14,8 +15,11 @@ export default function Navigation() {
 
     return (
         <React.Fragment>
-            <BrowserRouter>
+            <BrowserRouter basename={"/"}>
                 <Switch>
+                    <Route path="/acciones">
+                        <ActivitiesTimeline />
+                    </Route>
                     <Route path="/audio/:id">
                         <AudioPage />
                     </Route>

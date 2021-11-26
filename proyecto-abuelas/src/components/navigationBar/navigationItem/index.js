@@ -31,13 +31,6 @@ export default function NavigationItem(props) {
     setOpen(false);
   };
 
-  function handleListKeyDown(event) {
-    if (event.key === 'Tab') {
-      event.preventDefault();
-      setOpen(false);
-    }
-  }
-
   return (
     <div className={classes.root}>
       <NavigationButton

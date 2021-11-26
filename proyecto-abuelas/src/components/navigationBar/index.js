@@ -19,7 +19,9 @@ export default function NavigationBar() {
       <Grid container spacing={0}>
         <Grid item xs className={aboutUsStyte().root}>
           <NavigationItem>
+            <a  href="/acciones">
             SOBRE EL PROYECTO
+            </a>
           </NavigationItem>
         </Grid>
         <Grid item xs className={actionsStyle().root}>

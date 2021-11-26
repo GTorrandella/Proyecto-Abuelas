@@ -1,10 +1,11 @@
 {
   "about-us-red": "#D82329",
   "actions-blue": "#00ADC5",
-  "videos-yellow": "#F5AD1D",
-  "files-brown": "#A0734A",
   "contact-green": "#A4D09B",
-  "links-blue": "#2C4160",
+  "files-brown": "#A0734A",
+  "footer-background": "#727377",
+  "header-background": "#004E8A",
   "landind-background": "#F1F1F1",
-  "footer-background": "#727377"
+  "links-blue": "#2C4160",
+  "videos-yellow": "#F5AD1D"
 }

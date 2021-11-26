@@ -12,24 +12,20 @@ export default function Header() {
   return (
     <div>
       <AppBar position="static">
-        <Toolbar className='header'>
+        <Toolbar className={classes.root}>
           <img 
             src={'/banners/logoUndav.png'} 
             alt={'UNDAV Universidad Nacional de Avellaneda'}
             />
-          <Box display='flex' flexGrow={1}>
-            <div className={classes.textBox}>
-              <div className='row'>
-                <Typography className={classes.textTop}>
-                  Secretaria de Extención
-                </Typography>
-              </div>
-              <div className='row'>
-                <Typography className={classes.textBottom}>
-                  La UNDAV con las ABUELAS por la identidad
-                </Typography>
-              </div>
-            </div>
+          <Box display='flex' flexGrow={1} className={classes.baseFlex}>
+            <Typography className={classes.textTop}>
+              SECRETARIA DE EXTENSIÓN
+            </Typography>
+            <Box display='flex' flexGrow={1} className={classes.bottomFlex}>
+              <img
+                src={'/banners/tittle.png'}
+                alt={'La UNDAV con las Abuelas por la identidad'} />
+            </Box>
           </Box>
           <img
             src={'/banners/logoAbuelas.png'}
