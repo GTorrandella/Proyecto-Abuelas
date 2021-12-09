@@ -6,6 +6,7 @@ export default function NavigationButton (props){
     <React.Fragment>
       <Button
         style={{
+          letterSpacing: '0.1rem',
           fontFamily: 'Anton',
         }}
         aria-controls={props.open ? 'menu-list-grow' : undefined}
