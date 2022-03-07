@@ -37,18 +37,16 @@ export default function TimelineActivity(props){
               </Box>
             </TimelineOppositeContent>
             <TimelineSeparator style={{margin: '0px', padding: '0px'}}>
-              <TimelineConnector className={props.className.line} style={{borderBottomLeftRadius: '100%'}}/>
-              <TimelineDot className={props.className.dot}/>
-              <TimelineConnector className={props.className.line} style={{borderTopLeftRadius: '100%'}}/>
+              <TimelineConnector className={props.className.line}/>
+              <TimelineConnector className={props.className.line}/>
             </TimelineSeparator>
             <TimelineContent style={{margin: '0px', padding: '0px'}}/>
           </TimelineItem>
           <TimelineItem>
             <TimelineOppositeContent style={{margin: '0px', padding: '0px'}}/>
             <TimelineSeparator style={{margin: '0px', padding: '0px'}}>
-              <TimelineConnector className={props.className.line} style={{borderBottomRightRadius: '100%'}}/>
-              <TimelineDot className={props.className.dot}/>
-              <TimelineConnector className={props.className.line}  style={{borderTopRightRadius: '100%'}}/>
+              <TimelineConnector className={props.className.line} />
+              <TimelineConnector className={props.className.line} />
             </TimelineSeparator>
             <TimelineContent style={{margin: '0px', padding: '0px'}}>
               <Box display='flex' alignContent='left' alignItems='center' flexDirection='row'>

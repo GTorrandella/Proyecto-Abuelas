@@ -17,8 +17,8 @@ const baseYearStyle = {
 
 const baseDotStyle = {
   margin: '0px',
-  height: '13px',
-  width: '13px',
+  height: '20px',
+  width: '20px',
   boxShadow: 'unset',
 }
 
@@ -55,7 +55,7 @@ const basePhotoStyle = {
 }
 
 const baseConnectorStyle = {
-  borderRadius: '40%',
+  borderRadius: '0%',
   height: '5px',
   width: '35px',
 }
