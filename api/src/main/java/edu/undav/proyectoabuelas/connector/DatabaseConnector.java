@@ -32,9 +32,9 @@ public class DatabaseConnector{
     private void createDatasourse(){
         try {
             conn = datasource.getConnection();
-            System.out.println ("\nDatabase Connection Established...");
+            LOGGER.info("Database Connection Established");
         } catch (SQLException e) {
-            System.out.println ("\nDatabase Connection Falied...");
+            LOGGER.info("Database Connection Falied");
             datasource = null;
             conn = null;
         }
