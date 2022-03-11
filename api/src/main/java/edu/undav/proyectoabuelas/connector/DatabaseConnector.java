@@ -8,11 +8,11 @@ import java.util.ArrayList;
 
 import javax.sql.DataSource;
 
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.jdbc.DataSourceBuilder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import edu.undav.proyectoabuelas.config.MySqlConfig;
 import edu.undav.proyectoabuelas.entity.Activity;
 import edu.undav.proyectoabuelas.entity.ActivitySide;
 import edu.undav.proyectoabuelas.entity.Multimedia;
@@ -20,22 +20,17 @@ import edu.undav.proyectoabuelas.entity.Multimedia;
 
 @Component
 public class DatabaseConnector{
-    
-    @Value("${spring.datasource.url}")
-    private String url;
-    @Value("${spring.datasource.username}")
-    private String user;
-    @Value("${spring.datasource.password}")
-    private String pass;
 
-    private DataSource datasource = null;
-    private Connection conn = null;
+    private static final Logger LOGGER = LoggerFactory.getLogger(DatabaseConnector.class);
+
+    @Autowired
+    DataSource datasource;
+    Connection conn = null;
 
     public DatabaseConnector() { }
 
     private void createDatasourse(){
         try {
-            datasource = MySqlConfig.getDataSource(url, user, pass);
             conn = datasource.getConnection();
             System.out.println ("\nDatabase Connection Established...");
         } catch (SQLException e) {
@@ -50,8 +45,7 @@ public class DatabaseConnector{
         return new Activity(
             rs.getInt("id"), 
             rs.getString("nombre"), 
-            rs.getDate("fecha_inicio"),
-            rs.getDate("fecha_fin"), 
+            rs.getDate("fecha"),
             rs.getString("descripcion"));
     }
 
@@ -69,7 +63,7 @@ public class DatabaseConnector{
         ResultSet rs = null;
         ArrayList<Activity> results = new ArrayList<>();
 
-        if(datasource == null){
+        if(conn == null){
             createDatasourse();
         }
 
@@ -78,7 +72,7 @@ public class DatabaseConnector{
             rs = stmt.executeQuery(
                 "SELECT * " +
                 "FROM actividad " +
-                "ORDER BY fecha_inicio DESC");
+                "ORDER BY fecha ASC");
             while(rs.next()){
                 results.add(fillActivity(rs));
             }
@@ -94,7 +88,7 @@ public class DatabaseConnector{
             if (stmt != null) {
             try {
                 stmt.close();
-            } catch (SQLException sqlEx) { } // ignore
+            } catch (SQLException sqlEx) { } // ignoreS
             stmt = null;
             }
         }
@@ -106,7 +100,7 @@ public class DatabaseConnector{
         ResultSet rs = null;
         Activity results = null;
 
-        if(datasource == null){
+        if(conn == null){
             createDatasourse();
         }
 
@@ -143,7 +137,7 @@ public class DatabaseConnector{
         ResultSet rs = null;
         ActivitySide results = null;
 
-        if(datasource == null){
+        if(conn == null){
             createDatasourse();
         }
 
@@ -182,7 +176,7 @@ public class DatabaseConnector{
         ResultSet rs = null;
         Multimedia results = null;
 
-        if(datasource == null){
+        if(conn == null){
             createDatasourse();
         }
 
@@ -219,7 +213,7 @@ public class DatabaseConnector{
         ResultSet rs = null;
         ArrayList<Multimedia> results = new ArrayList<>();
 
-        if(datasource == null){
+        if(conn == null){
             createDatasourse();
         }
 
