@@ -15,7 +15,7 @@
 
 # production
 /proyecto-abuelas/build
-/proyecto-abuelas/package-lock.json
+
 /api/__pycache__
 */target
 Modelo-Base-de-Datos.png
