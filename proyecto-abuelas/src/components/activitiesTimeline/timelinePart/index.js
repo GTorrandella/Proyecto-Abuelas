@@ -57,7 +57,9 @@ export default function TimelinePart(props){
           <TimelineYear className={finalColor.year}>
             2020
           </TimelineYear>
-          <TimelineActivity className={finalColor.block}>
+          <TimelineActivity 
+            className={finalColor.block}
+            number={props.id}>
               {["NOMBRE", "probando"]}
           </TimelineActivity>
         </React.Fragment>)
