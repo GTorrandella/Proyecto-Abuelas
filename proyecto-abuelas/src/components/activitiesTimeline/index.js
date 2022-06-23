@@ -5,24 +5,37 @@ import Timeline from '@material-ui/lab/Timeline';
 import {
   getTimeline
 } from '../../connector';
-import TimelinePart from './timelinePart';
+import TimelineYear from './timelineYear';
+import TimelineActivity from './timelineActivity';
 
 export default function ActivitiesTimeline() {
     
     const [activityList, setActivityList] = useState([]);
     const [itemsOnDisplay, setItemsOnDisplay] = useState(Array.from({ length: 1 }));
-    const [hasMore, sethasMore] = useState(true);
+    const [hasMore, sethasMore] = useState(false);
 
-    const fetchMoreData = () => {
-        if (itemsOnDisplay.length >= 8) {
-        sethasMore(false);
-        return;
+    const fillTimelineData = () => {};
+    const constructTimeline = () => {
+        let currentYear = NaN
+        let blockYear = 0
+        let timeline = []
+        for (let i = 0; i < activityList.length; i++){
+            if (currentYear != activityList[i].year){
+                blockYear = blockYear + 1
+                currentYear = activityList[i].year
+                timeline = timeline.concat([
+                    <TimelineYear yearBlockNumber={blockYear}>
+                        {activityList[i].year}
+                    </TimelineYear>
+                ])
+            }
+            timeline = timeline.concat([
+                <TimelineActivity yearBlockNumber={blockYear} timilinePosition={i}>
+                    {[activityList[i].nombre, activityList[i].descripcion]}
+                </TimelineActivity>
+            ])
         }
-        setTimeout(() => {
-            setItemsOnDisplay(
-                itemsOnDisplay.concat(Array.from({ length: 1 }))
-            );
-        }, 500);
+        return timeline
     };
 
     useEffect(() => {
@@ -45,8 +58,8 @@ export default function ActivitiesTimeline() {
             backgroundColor: '#F1F1F1',
             }}>
             <InfiniteScroll
-                dataLength={itemsOnDisplay.length}
-                next={fetchMoreData}
+                dataLength={activityList.length}
+                next={fillTimelineData}
                 hasMore={hasMore}
                 loader={<h4>Cargando más registros...</h4>}
                 scrollableTarget="scrollableDiv"
@@ -57,15 +70,7 @@ export default function ActivitiesTimeline() {
                 }>
                 <Timeline>
                     {
-                    itemsOnDisplay.map((i, index) => {
-                                                return <><TimelinePart id={1}/>
-                                                <TimelinePart id={2}/>
-                                                <TimelinePart id={3}/>
-                                                <TimelinePart id={4}/>
-                                                <TimelinePart id={5}/>
-                                                <TimelinePart id={6}/>
-                        </>
-                    })
+                        constructTimeline()
                     }
                 </Timeline>
             </InfiniteScroll>

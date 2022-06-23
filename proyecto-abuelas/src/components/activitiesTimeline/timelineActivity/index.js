@@ -1,12 +1,18 @@
 import { Box, Paper, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import TimelineConnector from '@material-ui/lab/TimelineConnector';
 import TimelineContent from '@material-ui/lab/TimelineContent';
 import TimelineOppositeContent from '@material-ui/lab/TimelineOppositeContent';
-import TimelineDot from '@material-ui/lab/TimelineDot';
 import TimelineItem from '@material-ui/lab/TimelineItem';
 import TimelineSeparator from '@material-ui/lab/TimelineSeparator';
 import React from 'react';
+import {
+  firstBlockStyle,
+  secondBlockStyle,
+  thirdBlockStyle,
+  fourthBlockStyle,
+  fifthBlockStyle,
+  sixthBlockStyle
+} from '../../../styles/timeline'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -19,14 +25,41 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function TimelineActivity(props){
-  const classes = useStyles();
-  if(props.number%2 === 0){
+
+  const firstBlock = firstBlockStyle();
+  const secondBlock = secondBlockStyle();
+  const thirdBlock = thirdBlockStyle();
+  const fourthBlock = fourthBlockStyle();
+  const fifthBlock = fifthBlockStyle();
+  const sixthBlock = sixthBlockStyle();
+
+  const getColor = (yearBlockNumber) => {
+    switch(yearBlockNumber%6){
+      case 0:
+        return sixthBlock;
+      case 1:
+        return firstBlock;
+      case 2:
+        return secondBlock;
+      case 3:
+        return thirdBlock;
+      case 4:
+        return fourthBlock;
+      case 5:
+      default:
+        return fifthBlock;
+    }
+  }
+
+  const finalColor = getColor(props.yearBlockNumber)
+
+  if(props.timilinePosition%2 === 0){
     return <React.Fragment>
       <TimelineItem>
         <TimelineOppositeContent style={{margin: '0px', padding: '0px'}}>
           <Box display='flex' alignContent='right' alignItems='center' flexDirection='row-reverse'>
-            <spam className={props.className.photo}/>
-            <Box className={props.className.blockLeft}>
+            <spam className={finalColor.photo}/>
+            <Box className={finalColor.blockLeft}>
               <Typography>
                 {props.children[0]}
               </Typography>
@@ -39,7 +72,7 @@ export default function TimelineActivity(props){
         <TimelineSeparator style={{margin: '0px', padding: '0px'}}>
           <img 
             style={{paddingRight: '23px', height: '70px'}}              
-            src={'/timeline/'+props.number%6+'/timeline-left.png'} />
+            src={'/timeline/'+props.yearBlockNumber%6+'/timeline-left.png'} />
         </TimelineSeparator>
         <TimelineContent style={{margin: '0px', padding: '0px'}}/>
       </TimelineItem>
@@ -52,12 +85,12 @@ export default function TimelineActivity(props){
         <TimelineSeparator style={{margin: '0px', padding: '0px'}}>
           <img 
             style={{paddingLeft: '24.2px', height: '70px'}}              
-            src={'/timeline/'+props.number%6+'/timeline-right.png'} />
+            src={'/timeline/'+props.yearBlockNumber%6+'/timeline-right.png'} />
         </TimelineSeparator>
         <TimelineContent style={{margin: '0px', padding: '0px'}}>
           <Box display='flex' alignContent='left' alignItems='center' flexDirection='row'>
-            <spam className={props.className.photo}/>
-            <Box className={props.className.blockRight}>
+            <spam className={finalColor.photo}/>
+            <Box className={finalColor.blockRight}>
               <Typography>
                 {props.children[0]}
               </Typography>

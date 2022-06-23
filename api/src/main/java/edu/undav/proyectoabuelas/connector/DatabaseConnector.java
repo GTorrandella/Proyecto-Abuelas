@@ -46,6 +46,7 @@ public class DatabaseConnector{
             rs.getInt("id"), 
             rs.getString("nombre"), 
             rs.getDate("fecha"),
+            rs.getInt("anio"),
             rs.getString("descripcion"));
     }
 
@@ -70,9 +71,10 @@ public class DatabaseConnector{
         try {
             stmt = conn.createStatement();
             rs = stmt.executeQuery(
-                "SELECT * " +
-                "FROM actividad " +
-                "ORDER BY fecha ASC");
+                "SELECT ac.id, ac.nombre, ac.descripcion, " +
+                "YEAR(ac.fecha) AS anio, DATE(ac.fecha) AS fecha " +
+                "FROM actividad ac " +
+                "ORDER BY ac.fecha DESC");
             while(rs.next()){
                 results.add(fillActivity(rs));
             }
