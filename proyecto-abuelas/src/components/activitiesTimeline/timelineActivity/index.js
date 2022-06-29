@@ -1,4 +1,4 @@
-import { Box, Paper, Typography } from '@material-ui/core';
+import { Box, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import TimelineContent from '@material-ui/lab/TimelineContent';
 import TimelineOppositeContent from '@material-ui/lab/TimelineOppositeContent';
@@ -13,16 +13,6 @@ import {
   fifthBlockStyle,
   sixthBlockStyle
 } from '../../../styles/timeline'
-
-
-const useStyles = makeStyles((theme) => ({
-  paper: {
-      padding: '6px 16px',
-  },
-  secondaryTail: {
-      backgroundColor: theme.palette.secondary.main,
-  },
-}));
 
 export default function TimelineActivity(props){
 

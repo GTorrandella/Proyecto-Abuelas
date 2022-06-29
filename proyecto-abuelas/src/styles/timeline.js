@@ -2,7 +2,7 @@ import { makeStyles } from '@material-ui/core/styles';
 const color = require('./colors.json');
 
 const baseYearStyle = {
-  borderWidth: '5px',
+  borderWidth: '6px',
   height: '85px',
   width: '85px',
   fontSize: '2em',

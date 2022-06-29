@@ -11,7 +11,6 @@ import TimelineActivity from './timelineActivity';
 export default function ActivitiesTimeline() {
     
     const [activityList, setActivityList] = useState([]);
-    const [itemsOnDisplay, setItemsOnDisplay] = useState(Array.from({ length: 1 }));
     const [hasMore, sethasMore] = useState(false);
 
     const fillTimelineData = () => {};
@@ -20,7 +19,7 @@ export default function ActivitiesTimeline() {
         let blockYear = 0
         let timeline = []
         for (let i = 0; i < activityList.length; i++){
-            if (currentYear != activityList[i].year){
+            if (currentYear !== activityList[i].year){
                 blockYear = blockYear + 1
                 currentYear = activityList[i].year
                 timeline = timeline.concat([
