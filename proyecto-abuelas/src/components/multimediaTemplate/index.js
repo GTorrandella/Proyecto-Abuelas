@@ -35,6 +35,7 @@ export default function Base(props) {
         <React.Fragment>
             <Container maxWidth='md' style={{
                 backgroundColor: '#F1F1F1',
+                height: '70vh',
             }}>
                 <Grid container alignItems='stretch'> 
                     <Grid item xs={3}>
