@@ -7,9 +7,10 @@ import {
 } from '../../connector';
 import TimelineYear from './timelineYear';
 import TimelineActivity from './timelineActivity';
+import { timelineBaseStyle } from '../../styles/timeline';
 
 export default function ActivitiesTimeline() {
-    
+    const timelineStyle = timelineBaseStyle();
     const [activityList, setActivityList] = useState([]);
     const [hasMore, sethasMore] = useState(false);
 
@@ -49,13 +50,7 @@ export default function ActivitiesTimeline() {
         <Container 
             id="scrollableDiv"
             maxWidth='md'
-            style={{
-            height: '65vh',
-            overflow: 'auto',
-            display: 'flex',
-            flexDirection: 'column',
-            backgroundColor: '#F1F1F1',
-            }}>
+            className={timelineStyle.root}>
             <InfiniteScroll
                 dataLength={activityList.length}
                 next={fillTimelineData}

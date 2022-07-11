@@ -60,6 +60,16 @@ const baseConnectorStyle = {
   width: '35px',
 }
 
+export const timelineBaseStyle = makeStyles({
+  root:{
+    height: '70vh',
+    overflow: 'auto',
+    display: 'flex',
+    flexDirection: 'column',
+    backgroundColor: '#F1F1F1',
+  }
+})
+
 export const firstYearStyle = makeStyles({
   dot:{
     borderColor: color["about-us-red"],

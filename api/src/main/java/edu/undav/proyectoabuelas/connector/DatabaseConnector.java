@@ -78,7 +78,9 @@ public class DatabaseConnector{
             while(rs.next()){
                 results.add(fillActivity(rs));
             }
-        } catch (SQLException ex){} 
+        } catch (SQLException ex){
+            LOGGER.error(ex.toString());
+        }
         finally {
             if(rs != null) {
             try {
@@ -115,7 +117,9 @@ public class DatabaseConnector{
             while(rs.next()){
                 results = fillActivity(rs);
             }
-        } catch (SQLException ex){} 
+        } catch (SQLException ex){
+            LOGGER.error(ex.toString());
+        }
         finally {
             if(rs != null) {
             try {
@@ -153,7 +157,7 @@ public class DatabaseConnector{
                 results = new ActivitySide(rs.getInt("id"), rs.getString("nombre"));
             }
         } catch (SQLException ex){
-            ex.printStackTrace();
+            LOGGER.error(ex.toString());
         } 
         finally {
             if(rs != null) {
@@ -191,7 +195,9 @@ public class DatabaseConnector{
             while(rs.next()){
                 results = fillMultimedia(rs);
             }
-        } catch (SQLException ex){} 
+        } catch (SQLException ex){
+            LOGGER.error(ex.toString());
+        }
         finally {
             if(rs != null) {
             try {
@@ -228,7 +234,9 @@ public class DatabaseConnector{
             while(rs.next()){
                 results.add(fillMultimedia(rs));
             }
-        } catch (SQLException ex){} 
+        } catch (SQLException ex){
+            LOGGER.error(ex.toString());
+        }
         finally {
             if(rs != null) {
             try {

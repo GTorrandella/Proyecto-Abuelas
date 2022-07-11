@@ -28,27 +28,5 @@ export const headerStyle = makeStyles({
     letterSpacing: '0.2rem',
     fontWeight: 'medium',
     textAlign: 'left',
-  },
-  textBottom:{
-    fontFamily: 'Fredericka the Great',
-    fontWeight: 'bold',
-    fontSize: '2.2rem',
-    textAlign: 'left',
-  },
-  textBottomSmall:{
-    fontFamily: 'Abegnale',
-    fontSize: '1rem',
-    fontWeight: 'bold',
-    textAlign: 'left',
-  },
-  textBottomVertical:{
-    fontFamily: 'Abegnale',
-    fontWeight: 'bold',
-    fontSize: '0.7rem',
-    alignItems: 'center',
-    textAlign: 'left',
-    writingMode: 'sideways-lr',
-    textOrientation: 'mixed',
-    marginRight: '4px',
   }
 });

@@ -16,4 +16,15 @@ public class Activity {
         this.year = year;
         this.descripcion = descripcion;
     }
+
+    @Override
+    public String toString() {
+        return "Activity{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", fecha=" + fecha +
+                ", year=" + year +
+                ", descripcion='" + descripcion + '\'' +
+                '}';
+    }
 }
