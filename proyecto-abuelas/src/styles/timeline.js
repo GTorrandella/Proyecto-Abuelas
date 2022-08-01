@@ -152,11 +152,11 @@ export const secondBlockStyle = makeStyles({
 
 export const thirdYearStyle = makeStyles({
   dot:{
-    borderColor: color["videos-yellow"],
+    borderColor: color["multimedia-yellow"],
     ...baseYearStyle,
   },
   line: {
-    backgroundColor: color["videos-yellow"],
+    backgroundColor: color["multimedia-yellow"],
     ...baseLineStyle,
   }
 });
@@ -164,28 +164,28 @@ export const thirdYearStyle = makeStyles({
 export const thirdBlockStyle = makeStyles({
   dot:{
     ...baseDotStyle,
-    borderColo: color["videos-yellow"],
-    backgroundColor: color["videos-yellow"],
+    borderColo: color["multimedia-yellow"],
+    backgroundColor: color["multimedia-yellow"],
   },
   connector:{
     ...baseConnectorStyle,
-    backgroundColor: color["videos-yellow"],
-    borderBlock: color["videos-yellow"]
+    backgroundColor: color["multimedia-yellow"],
+    borderBlock: color["multimedia-yellow"]
   },
   line:{
-    backgroundColor: color["videos-yellow"],
+    backgroundColor: color["multimedia-yellow"],
     ...baseLineStyle,
   },
   blockLeft:{
-    borderRightColor: color["videos-yellow"],
+    borderRightColor: color["multimedia-yellow"],
     ...baseBlockLeftStyle,
   },
   blockRight:{
-    borderLeftColor: color["videos-yellow"],
+    borderLeftColor: color["multimedia-yellow"],
     ...baseBlockRightStyle,
   },
   photo: {
-    borderColor: color["videos-yellow"],
+    borderColor: color["multimedia-yellow"],
     ...basePhotoStyle,
   }
 });

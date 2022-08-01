@@ -31,7 +31,7 @@ export default function NavigationBar() {
         </Grid>
         <Grid item xs className={videosStyle().root}>
           <NavigationItem>
-            VIDEOS
+            MULTIMEDIA
           </NavigationItem>
         </Grid>
         <Grid item xs className={filesStyle().root}>

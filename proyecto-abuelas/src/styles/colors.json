@@ -7,5 +7,7 @@
   "header-background": "#004E8A",
   "landind-background": "#F1F1F1",
   "links-blue": "#2C4160",
-  "videos-yellow": "#F5AD1D"
+  "multimedia-yellow": "#F5AD1D",
+  "dark-brown":"#845F3E",
+  "dark-yellow":"#DC9B1A"
 }

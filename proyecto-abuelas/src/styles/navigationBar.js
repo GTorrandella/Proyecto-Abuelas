@@ -15,7 +15,7 @@ export const actionsStyle = makeStyles({
 
 export const videosStyle = makeStyles({
   root: {
-    backgroundColor: color["videos-yellow"],
+    backgroundColor: color["multimedia-yellow"],
   },
 });
 

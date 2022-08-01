@@ -13,7 +13,7 @@ export const footerHeadStyle = makeStyles({
     color: color["actions-blue"],
   },
   videos: {
-    color: color["videos-yellow"],
+    color: color["multimedia-yellow"],
   },
   files: {
     color: color["files-brown"],
