@@ -63,7 +63,7 @@ export const fileStyle = makeStyles({
         ...baseSideNavigator.template
     },
     sideNavbase:{
-        borderColor: color['files-brown'],
+        borderColor: color['contactus-brown'],
         ...baseSideNavigator.container
     },
     sideNavtext:{

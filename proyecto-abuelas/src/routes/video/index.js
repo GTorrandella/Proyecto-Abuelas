@@ -20,7 +20,7 @@ export default function VideoPage() {
         fetchData();
     }, [id]);
 
-    debugger
+    
 
     return (
         <React.Fragment>

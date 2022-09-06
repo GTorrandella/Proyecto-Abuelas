@@ -1,30 +1,27 @@
 import React from 'react';
 
-import NavigationButton from './navigationButton';
 import NavigationMenu from './navigationMenu';
-import { makeStyles } from '@material-ui/core/styles';
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    height: '100%',
-    display: 'flex',
-  }
-}));
+import Button from '@material-ui/core/Button';
+import ExpandMore from '@material-ui/icons/ExpandMore';
+import ExpandLess from '@material-ui/icons/ExpandLess';
+import { baseStyle } from '../../../styles/navigationBar';
+import { Typography } from '@material-ui/core';
 
 export default function NavigationItem(props) {
-  const classes = useStyles();
+  const classes = baseStyle();
   const [open, setOpen] = React.useState(false);
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleToggle = (event) => {
     setOpen((prevOpen) => !prevOpen);
+    debugger
     if(!anchorEl){
-      setAnchorEl(event.currentTarget);
+      setAnchorEl(event.currentTarget.parentElement);
     }
   };
 
   const handleClose = (event) => {
-    if (anchorEl && anchorEl.current && anchorEl.current.contains(event.target)) {
+    if (anchorEl && anchorEl.current) {
       return;
     }
 
@@ -32,13 +29,15 @@ export default function NavigationItem(props) {
   };
 
   return (
-    <div className={classes.root}>
-      <NavigationButton
-        open={open}
-        handleToggle={handleToggle}
-      >
-        {props.children} 
-      </NavigationButton>
+    <div className={classes.text}>
+      {props.children[0]}
+      <Button
+        className={classes.buttom}
+        aria-controls={open ? 'menu-list-grow' : undefined}
+        aria-haspopup="true"
+        onClick={handleToggle}>
+          {open ? <ExpandLess /> : <ExpandMore />}
+      </Button>
       <NavigationMenu 
         anchorElem={anchorEl}
         open={open}

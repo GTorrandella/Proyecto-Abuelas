@@ -15,28 +15,26 @@ export default function Navigation() {
 
     return (
         <React.Fragment>
-            <BrowserRouter basename={"/"}>
-                <Switch>
-                    <Route path="/acciones">
-                        <ActivitiesTimeline />
-                    </Route>
-                    <Route path="/audio/:id">
-                        <AudioPage />
-                    </Route>
-                    <Route path="/video/:id">
-                        <VideoPage />
-                    </Route>
-                    <Route path="/imagen/:id">
-                        <ImagePage />
-                    </Route>
-                    <Route path="/archivo/:id">
-                        <FilePage />
-                    </Route>
-                    <Route path="/">
-                        <LandingPage />
-                    </Route>
-                </Switch>
-            </BrowserRouter>
+            <Switch>
+                <Route path="/acciones">
+                    <ActivitiesTimeline />
+                </Route>
+                <Route path="/audio/:id">
+                    <AudioPage />
+                </Route>
+                <Route path="/video/:id">
+                    <VideoPage />
+                </Route>
+                <Route path="/imagen/:id">
+                    <ImagePage />
+                </Route>
+                <Route path="/archivo/:id">
+                    <FilePage />
+                </Route>
+                <Route path="/">
+                    <LandingPage />
+                </Route>
+            </Switch>
         </React.Fragment>
     );
 }

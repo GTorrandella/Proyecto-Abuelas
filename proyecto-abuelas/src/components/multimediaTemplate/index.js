@@ -11,7 +11,7 @@ export default function Base(props) {
     const [activity, setActivity] = useState(null);
     const [multimediaList, setMultimediaList] = useState(null)
 
-    debugger
+    
  
     useEffect(() => {
         const fetchData = async () => {

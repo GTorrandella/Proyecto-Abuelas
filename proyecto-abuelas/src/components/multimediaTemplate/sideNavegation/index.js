@@ -12,7 +12,7 @@ export default function SideNavegation(props) {
     const photoElem = sideElem ? sideElem.filter(elem => elem.tipo === 'PHOTO') : []
     const fileElem = sideElem ? sideElem.filter(elem => elem.tipo === 'FILE') : []
     
-    debugger
+    
 
     return (
         <React.Fragment>

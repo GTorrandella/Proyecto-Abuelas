@@ -42,13 +42,12 @@ export default function SideItem(props) {
                     {open ? <ExpandLess /> : <ExpandMore />}
                 </ListItem>
                 <Collapse in={open} timeout="auto" unmountOnExit>
-                    {
-                        items.map((item, key) => {
+                        <List component="div" 
+                        style={{
+                            paddingLeft: '15px'
+                        }}>
+                        {items.map((item, key) => {
                             return (
-                            <List component="div" 
-                                style={{
-                                    paddingLeft: '15px'
-                                }}>
                                 <ListItem button>
                                     <Link to={path + item.id}>
                                         <ListItemText
@@ -61,9 +60,8 @@ export default function SideItem(props) {
                                         primary={item.nombre}/>
                                     </Link>
                                 </ListItem>
-                            </List>
-                        )})
-                    }                    
+                        )})}
+                        </List>       
                 </Collapse>
             </div>)
             }

@@ -192,11 +192,11 @@ export const thirdBlockStyle = makeStyles({
 
 export const fourthYearStyle = makeStyles({
   dot:{
-    borderColor: color["files-brown"],
+    borderColor: color["contactus-brown"],
     ...baseYearStyle,
   },
   line: {
-    backgroundColor: color["files-brown"],
+    backgroundColor: color["contactus-brown"],
     ...baseLineStyle,
   }
 });
@@ -204,39 +204,39 @@ export const fourthYearStyle = makeStyles({
 export const fourthBlockStyle = makeStyles({
   dot:{
     ...baseDotStyle,
-    borderColo: color["files-brown"],
-    backgroundColor: color["files-brown"],
+    borderColo: color["contactus-brown"],
+    backgroundColor: color["contactus-brown"],
   },
   connector:{
     ...baseConnectorStyle,
-    backgroundColor: color["files-brown"],
-    borderBlock: color["files-brown"]
+    backgroundColor: color["contactus-brown"],
+    borderBlock: color["contactus-brown"]
   },
   line:{
-    backgroundColor: color["files-brown"],
+    backgroundColor: color["contactus-brown"],
     ...baseLineStyle,
   },
   blockLeft:{
-    borderRightColor: color["files-brown"],
+    borderRightColor: color["contactus-brown"],
     ...baseBlockLeftStyle,
   },
   blockRight:{
-    borderLeftColor: color["files-brown"],
+    borderLeftColor: color["contactus-brown"],
     ...baseBlockRightStyle,
   },
   photo: {
-    borderColor: color["files-brown"],
+    borderColor: color["contactus-brown"],
     ...basePhotoStyle,
   }
 });
 
 export const fifthYearStyle = makeStyles({
   dot:{
-    borderColor: color["contact-green"],
+    borderColor: color["links-green"],
     ...baseYearStyle,
   },
   line: {
-    backgroundColor: color["contact-green"],
+    backgroundColor: color["links-green"],
     ...baseLineStyle,
   }
 });
@@ -244,39 +244,39 @@ export const fifthYearStyle = makeStyles({
 export const fifthBlockStyle = makeStyles({
   dot:{
     ...baseDotStyle,
-    borderColo: color["contact-green"],
-    backgroundColor: color["contact-green"],
+    borderColo: color["links-green"],
+    backgroundColor: color["links-green"],
   },
   connector:{
     ...baseConnectorStyle,
-    backgroundColor: color["contact-green"],
-    borderBlock: color["contact-green"]
+    backgroundColor: color["links-green"],
+    borderBlock: color["links-green"]
   },
   line:{
-    backgroundColor: color["contact-green"],
+    backgroundColor: color["links-green"],
     ...baseLineStyle,
   },
   blockLeft:{
-    borderRightColor: color["contact-green"],
+    borderRightColor: color["links-green"],
     ...baseBlockLeftStyle,
   },
   blockRight:{
-    borderLeftColor: color["contact-green"],
+    borderLeftColor: color["links-green"],
     ...baseBlockRightStyle,
   },
   photo: {
-    borderColor: color["contact-green"],
+    borderColor: color["links-green"],
     ...basePhotoStyle,
   }
 });
 
 export const sixthYearStyle = makeStyles({
   dot:{
-    borderColor: color["links-blue"],
+    borderColor: color["search-blue"],
     ...baseYearStyle,
   },
   line: {
-    backgroundColor: color["links-blue"],
+    backgroundColor: color["search-blue"],
     ...baseLineStyle,
   }
 });
@@ -284,28 +284,28 @@ export const sixthYearStyle = makeStyles({
 export const sixthBlockStyle = makeStyles({
   dot:{
     ...baseDotStyle,
-    borderColo: color["links-blue"],
-    backgroundColor: color["links-blue"],
+    borderColo: color["search-blue"],
+    backgroundColor: color["search-blue"],
   },
   connector:{
     ...baseConnectorStyle,
-    backgroundColor: color["links-blue"],
-    borderBlock: color["links-blue"]
+    backgroundColor: color["search-blue"],
+    borderBlock: color["search-blue"]
   },
   line:{
-    backgroundColor: color["links-blue"],
+    backgroundColor: color["search-blue"],
     ...baseLineStyle,
   },
   blockLeft:{
-    borderRightColor: color["links-blue"],
+    borderRightColor: color["search-blue"],
     ...baseBlockLeftStyle,
   },
   blockRight:{
-    borderLeftColor: color["links-blue"],
+    borderLeftColor: color["search-blue"],
     ...baseBlockRightStyle,
   },
   photo: {
-    borderColor: color["links-blue"],
+    borderColor: color["search-blue"],
     ...basePhotoStyle,
   }
 });

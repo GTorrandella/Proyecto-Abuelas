@@ -17,20 +17,20 @@ export default function Header() {
               src={'/banners/logoUndav.png'} 
               alt={'UNDAV Universidad Nacional de Avellaneda'} />
           </a>
-            <Box display='flex' flexGrow={1} className={classes.baseFlex}>
+          <Box display='flex' flexGrow={1} className={classes.baseFlex}>
+            <a href='/'>
+              <Typography className={classes.textTop}>
+                SECRETARIA DE EXTENSIÓN
+              </Typography>
+            </a>
+            <Box display='flex' flexGrow={1} className={classes.bottomFlex}>
               <a href='/'>
-                <Typography className={classes.textTop}>
-                  SECRETARIA DE EXTENSIÓN
-                </Typography>
+                <img
+                  src={'/banners/tittle.png'}
+                  alt={'La UNDAV con las Abuelas por la identidad'} />
               </a>
-              <Box display='flex' flexGrow={1} className={classes.bottomFlex}>
-                <a href='/'>
-                  <img
-                    src={'/banners/tittle.png'}
-                    alt={'La UNDAV con las Abuelas por la identidad'} />
-                </a>
-              </Box>
             </Box>
+          </Box>
           <a href='https://www.abuelas.org.ar/'>
             <img
               src={'/banners/logoAbuelas.png'}
