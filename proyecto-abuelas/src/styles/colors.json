@@ -1,10 +1,13 @@
 {
   "about-us-red": "#D82329",
   "actions-blue": "#00ADC5",
-  "videos-yellow": "#F5AD1D",
-  "files-brown": "#A0734A",
-  "contact-green": "#A4D09B",
-  "links-blue": "#2C4160",
+  "links-green": "#A4D09B",
+  "contactus-brown": "#A0734A",
+  "footer-background": "#727377",
+  "header-background": "#004E8A",
   "landind-background": "#F1F1F1",
-  "footer-background": "#727377"
+  "search-blue": "#2C4160",
+  "multimedia-yellow": "#F5AD1D",
+  "dark-brown":"#845F3E",
+  "dark-yellow":"#DC9B1A"
 }

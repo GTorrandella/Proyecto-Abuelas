@@ -14,4 +14,15 @@ public class Multimedia {
         this.archivo = archivo;
         this.tipo = tipo;
     }
+
+    @Override
+    public String toString() {
+        return "Multimedia{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", descripcion='" + descripcion + '\'' +
+                ", archivo='" + archivo + '\'' +
+                ", tipo='" + tipo + '\'' +
+                '}';
+    }
 }

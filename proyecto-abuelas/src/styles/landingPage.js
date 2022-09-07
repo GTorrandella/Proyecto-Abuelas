@@ -6,11 +6,11 @@ export const landingPageStyle = makeStyles((theme) => ({
     marginTop: '0.5vh',
     paddingBottom: theme.spacing(7),
     width: '100vw',
-    height: '80vh',
+    height: '70vh',
     backgroundColor: color['landind-background'],
   },
   image: {
-    height: '100%',
+    height: '60vh',
     objectFit: 'cover',
     objectPosition: 'center center',
     margin: '2vw',

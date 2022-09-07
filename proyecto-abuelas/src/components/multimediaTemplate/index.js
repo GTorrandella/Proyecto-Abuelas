@@ -7,9 +7,11 @@ import { Container, Grid } from '@material-ui/core'
 import SideNavegation from './sideNavegation'
 
 export default function Base(props) {
-    const { multimedia, multimediaId } = props
+    const { multimedia, multimediaId, classes } = props
     const [activity, setActivity] = useState(null);
     const [multimediaList, setMultimediaList] = useState(null)
+
+    
  
     useEffect(() => {
         const fetchData = async () => {
@@ -33,12 +35,12 @@ export default function Base(props) {
 
     return (
         <React.Fragment>
-            <Container maxWidth='md' style={{
-                backgroundColor: '#F1F1F1',
-            }}>
+            <Container maxWidth='md' className={classes.base}>
                 <Grid container alignItems='stretch'> 
                     <Grid item xs={3}>
-                        <SideNavegation activity={activity} sideElem={multimediaList}/>
+                        <SideNavegation 
+                        classes={classes.sideNav}
+                        activity={activity} sideElem={multimediaList}/>
                     </Grid>
                     <Grid item xs={9}>
                         {multimedia}

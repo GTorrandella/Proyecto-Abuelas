@@ -11,28 +11,35 @@ async function fetchWithTimeout(resource, options) {
   }
 
 export async function getMultimedia(id){
-    const url = "http://127.0.0.1:5000/multimedia/" + id;
+    const url = "http://127.0.0.1:8080/api/multimedia/" + id;
     const response = await fetchWithTimeout(url, {})
     const responseJson = await response.json()
     return responseJson
 }
 
 export async function getMultimediaByActivityId(id){
-    const url = "http://127.0.0.1:5000/multimedia?actividad=" + id;
+    const url = "http://127.0.0.1:8080/api/multimedia?actividad=" + id;
     const response = await fetchWithTimeout(url, {})
     const responseJson = await response.json()
     return responseJson
 }
 
 export async function getActivity(id){
-    const url = "http://127.0.0.1:5000/actividad/" + id;
+    const url = "http://127.0.0.1:8080/api/actividad/" + id;
     const response = await fetchWithTimeout(url, {})
     const responseJson = await response.json()
     return responseJson
 }
 
 export async function getActivityByMultimediaId(id){
-    const url = "http://127.0.0.1:5000/actividad?multimedia=" + id;
+    const url = "http://127.0.0.1:8080/api/actividad?multimedia=" + id;
+    const response = await fetchWithTimeout(url, {})
+    const responseJson = await response.json()
+    return responseJson
+}
+
+export async function getTimeline(){
+    const url = "http://127.0.0.1:8080/api/timeline";
     const response = await fetchWithTimeout(url, {})
     const responseJson = await response.json()
     return responseJson

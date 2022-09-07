@@ -166,5 +166,5 @@ values
     STR_TO_DATE('2019-03-25', '%Y-%m-%d'), 
     "Shoujo Kakumei Utena 2", 
     "https://youtu.be/Y07GHrnVsQ0",
-    "PHOTO"
+    "VIDEO"
   );

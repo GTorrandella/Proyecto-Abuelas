@@ -13,26 +13,44 @@ export const actionsStyle = makeStyles({
   },
 });
 
-export const videosStyle = makeStyles({
+export const multimediaStyle = makeStyles({
   root: {
-    backgroundColor: color["videos-yellow"],
-  },
-});
-
-export const filesStyle = makeStyles({
-  root: {
-    backgroundColor: color["files-brown"],
+    backgroundColor: color["multimedia-yellow"],
   },
 });
 
 export const contactUsStyle = makeStyles({
   root: {
-    backgroundColor: color["contact-green"],
+    backgroundColor: color["contactus-brown"],
   },
 });
 
 export const linksStyle = makeStyles({
   root: {
-    backgroundColor: color["links-blue"],
+    backgroundColor: color["links-green"],
   },
 });
+
+export const searchStyle = makeStyles({
+  root: {
+    backgroundColor: "#b0c1db",
+  },
+});
+
+export const baseStyle = makeStyles({
+  text: {
+    display: 'flex',
+    maxHeight: '2rem',
+    letterSpacing: '0.1rem',
+    fontFamily: 'Anton',
+    alignItems: 'center',
+    paddingLeft: '1rem',
+  },
+  buttom: {
+    maxHeight: "2rem",
+  },
+  input: {
+    fontFamily: 'Anton',
+    maxHeight:'1.2rem',
+  }
+})

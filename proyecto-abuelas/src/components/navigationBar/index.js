@@ -5,11 +5,13 @@ import NavigationItem from './navigationItem'
 import {
   aboutUsStyte,
   actionsStyle,
-  videosStyle,
-  filesStyle,
+  multimediaStyle,
   contactUsStyle,
   linksStyle,
+  searchStyle,
 } from '../../styles/navigationBar'
+import { Link } from 'react-router-dom';
+import NavigationSeachBar from './navigationSearchBar';
 
 
 export default function NavigationBar() {
@@ -19,33 +21,35 @@ export default function NavigationBar() {
       <Grid container spacing={0}>
         <Grid item xs className={aboutUsStyte().root}>
           <NavigationItem>
-            SOBRE EL PROYECTO
+            {["SOBRE EL PROYECTO"]}
           </NavigationItem>
         </Grid>
         <Grid item xs className={actionsStyle().root}>
           <NavigationItem>
-            ACCIONES
+            {[<Link to="/acciones">
+            {"ACCIONES"}
+            </Link>]}
           </NavigationItem>
         </Grid>
-        <Grid item xs className={videosStyle().root}>
+        <Grid item xs className={multimediaStyle().root}>
           <NavigationItem>
-            VIDEOS
-          </NavigationItem>
-        </Grid>
-        <Grid item xs className={filesStyle().root}>
-          <NavigationItem>
-            ARCHIVOS
+            {["MULTIMEDIA"]}
           </NavigationItem>
         </Grid>
         <Grid item xs className={contactUsStyle().root}>
           <NavigationItem>
-            CONTACTO/SUMATE
+            {["CONTACTO/SUMATE"]}
           </NavigationItem>
         </Grid>
         <Grid item xs className={linksStyle().root}>
           <NavigationItem>
-            LINKS
+            {["LINKS"]}
           </NavigationItem>
+        </Grid>
+        <Grid item xs className={searchStyle().root}>
+          <NavigationSeachBar>
+            BUSQUEDA
+          </NavigationSeachBar>
         </Grid>
       </Grid>
     </div>
