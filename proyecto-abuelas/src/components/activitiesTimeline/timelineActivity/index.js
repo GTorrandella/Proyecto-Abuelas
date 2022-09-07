@@ -1,67 +1,97 @@
-import { Box, Paper, Typography } from '@material-ui/core';
+import { Box, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import TimelineConnector from '@material-ui/lab/TimelineConnector';
 import TimelineContent from '@material-ui/lab/TimelineContent';
 import TimelineOppositeContent from '@material-ui/lab/TimelineOppositeContent';
-import TimelineDot from '@material-ui/lab/TimelineDot';
 import TimelineItem from '@material-ui/lab/TimelineItem';
 import TimelineSeparator from '@material-ui/lab/TimelineSeparator';
 import React from 'react';
-
-
-const useStyles = makeStyles((theme) => ({
-  paper: {
-      padding: '6px 16px',
-  },
-  secondaryTail: {
-      backgroundColor: theme.palette.secondary.main,
-  },
-}));
+import {
+  firstBlockStyle,
+  secondBlockStyle,
+  thirdBlockStyle,
+  fourthBlockStyle,
+  fifthBlockStyle,
+  sixthBlockStyle
+} from '../../../styles/timeline';
 
 export default function TimelineActivity(props){
-  const classes = useStyles();
+  const { timilinePosition, yearBlockNumber, children } = props
+
+  const firstBlock = firstBlockStyle();
+  const secondBlock = secondBlockStyle();
+  const thirdBlock = thirdBlockStyle();
+  const fourthBlock = fourthBlockStyle();
+  const fifthBlock = fifthBlockStyle();
+  const sixthBlock = sixthBlockStyle();
+
+  const getColor = (yearBlockNumber) => {
+    switch(yearBlockNumber%6){
+      case 0:
+        return sixthBlock;
+      case 1:
+        return firstBlock;
+      case 2:
+        return secondBlock;
+      case 3:
+        return thirdBlock;
+      case 4:
+        return fourthBlock;
+      case 5:
+      default:
+        return fifthBlock;
+    }
+  }
+
+  const finalColor = getColor(yearBlockNumber)
+
+  if(timilinePosition%2 === 0){
     return <React.Fragment>
-          <TimelineItem>
-            <TimelineOppositeContent style={{margin: '0px', padding: '0px'}}>
-              <Box display='flex' alignContent='right' alignItems='center' flexDirection='row-reverse'>
-                <spam class={props.className.connector}/>
-                <spam className={props.className.photo}/>
-                <Box className={props.className.blockLeft}>
-                  <Typography>
-                    TÍTULO
-                  </Typography>
-                  <Typography>
-                    DESCRIPCIÓN MUCHO MÁS LARGA
-                  </Typography>
-                </Box>
-              </Box>
-            </TimelineOppositeContent>
-            <TimelineSeparator style={{margin: '0px', padding: '0px'}}>
-              <TimelineConnector className={props.className.line}/>
-              <TimelineConnector className={props.className.line}/>
-            </TimelineSeparator>
-            <TimelineContent style={{margin: '0px', padding: '0px'}}/>
-          </TimelineItem>
-          <TimelineItem>
-            <TimelineOppositeContent style={{margin: '0px', padding: '0px'}}/>
-            <TimelineSeparator style={{margin: '0px', padding: '0px'}}>
-              <TimelineConnector className={props.className.line} />
-              <TimelineConnector className={props.className.line} />
-            </TimelineSeparator>
-            <TimelineContent style={{margin: '0px', padding: '0px'}}>
-              <Box display='flex' alignContent='left' alignItems='center' flexDirection='row'>
-                <spam class={props.className.connector}/>
-                <spam className={props.className.photo}/>
-                <Box className={props.className.blockRight}>
-                  <Typography>
-                    TÍTULO MUCHO MÁS LARGO
-                  </Typography>
-                  <Typography>
-                    DESCRIPCIÓN
-                  </Typography>
-                </Box>
-              </Box>
-            </TimelineContent>
-          </TimelineItem>
-        </React.Fragment>
+      <TimelineItem>
+        <TimelineOppositeContent style={{margin: '0px', padding: '0px'}}>
+          <Box display='flex' alignContent='right' alignItems='center' flexDirection='row-reverse'>
+            <spam className={finalColor.photo}/>
+            <Box className={finalColor.blockLeft}>
+              <Typography>
+                {children[0]}
+              </Typography>
+              <Typography>
+                {children[1]}
+              </Typography>
+            </Box>
+          </Box>
+        </TimelineOppositeContent>
+        <TimelineSeparator style={{margin: '0px', padding: '0px'}}>
+          <img 
+            style={{paddingRight: '23px', height: '70px'}}              
+            src={'/timeline/'+yearBlockNumber%6+'/timeline-left.png'} />
+        </TimelineSeparator>
+        <TimelineContent style={{margin: '0px', padding: '0px'}}/>
+      </TimelineItem>
+    </React.Fragment>
+  }
+  else{
+    return <React.Fragment>
+      <TimelineItem>
+        <TimelineOppositeContent style={{margin: '0px', padding: '0px'}}/>
+        <TimelineSeparator style={{margin: '0px', padding: '0px'}}>
+          <img 
+            style={{paddingLeft: '24.2px', height: '70px'}}              
+            src={'/timeline/'+yearBlockNumber%6+'/timeline-right.png'} />
+        </TimelineSeparator>
+        <TimelineContent style={{margin: '0px', padding: '0px'}}>
+          <Box display='flex' alignContent='left' alignItems='center' flexDirection='row'>
+            <spam className={finalColor.photo}/>
+            <Box className={finalColor.blockRight}>
+              <Typography>
+                {children[0]}
+              </Typography>
+              <Typography>
+                {children[1]}
+              </Typography>
+            </Box>
+          </Box>
+        </TimelineContent>
+      </TimelineItem>
+    </React.Fragment>
+  }
 }

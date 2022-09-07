@@ -7,7 +7,7 @@ export default function LandingPage() {
 
     return (
         <React.Fragment>
-            <Container className={classes.grid} maxWidth="md">
+            <Container className={classes.grid}>
                 <img className={classes.image}
                   src={'/landing/dibujoAbuelas.png'} 
                   alt={'Abuelas de Plaza de Mayo'}

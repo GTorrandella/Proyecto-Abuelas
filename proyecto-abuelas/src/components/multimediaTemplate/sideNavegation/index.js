@@ -16,11 +16,27 @@ export default function SideNavegation(props) {
         <React.Fragment>
             <Container
                 style={{
+                    borderColor: '#F5AD1D',
                     borderLeftStyle: 'solid',
-                    marginTop: '5px'
+                    marginTop: '5px',
+                    height: '65vh',
                 }}>
-                <Typography>{activity ? activity['nombre'] : ''}</Typography>
-                <List component="nav">
+                <Typography style={{
+                    fontFamily: 'Anton',
+                    fontSize: '1.2rem',
+                    letterSpacing: '1px',
+                    color: 'black',
+                    textTransform: 'uppercase',
+                    borderBottomStyle: 'solid',
+                    borderColor: '#DC9B1A',
+                }}>
+                    {activity ? activity['nombre'] : 'Entrevista con el Chavo del 8'}
+                </Typography>
+                <List component="nav" 
+                style={{
+                    height: '80%',
+                    overflow: 'auto',
+                }}>
                     <SideItem title="Videos" items={videoElem} path='/video/' />
                     <SideItem title="Audios" items={audioElem} path='/audio/' />
                     <SideItem title="Fotos" items={photoElem} path='/imagen/' />

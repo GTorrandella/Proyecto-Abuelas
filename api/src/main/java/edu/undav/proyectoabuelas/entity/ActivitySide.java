@@ -8,4 +8,12 @@ public class ActivitySide {
         this.id = id;
         this.nombre = nombre;
     }
+
+    @Override
+    public String toString() {
+        return "ActivitySide{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                '}';
+    }
 }

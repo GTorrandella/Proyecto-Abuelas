@@ -36,3 +36,10 @@ export const linksStyle = makeStyles({
     backgroundColor: color["links-blue"],
   },
 });
+
+export const buttonStyle = makeStyles({
+  root: {
+    letterSpacing: '0.1rem',
+    fontFamily: 'Anton',
+  }
+})

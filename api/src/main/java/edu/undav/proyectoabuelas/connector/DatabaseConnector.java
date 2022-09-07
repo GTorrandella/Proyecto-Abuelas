@@ -46,6 +46,7 @@ public class DatabaseConnector{
             rs.getInt("id"), 
             rs.getString("nombre"), 
             rs.getDate("fecha"),
+            rs.getInt("anio"),
             rs.getString("descripcion"));
     }
 
@@ -70,13 +71,16 @@ public class DatabaseConnector{
         try {
             stmt = conn.createStatement();
             rs = stmt.executeQuery(
-                "SELECT * " +
-                "FROM actividad " +
-                "ORDER BY fecha ASC");
+                "SELECT ac.id, ac.nombre, ac.descripcion, " +
+                "YEAR(ac.fecha) AS anio, DATE(ac.fecha) AS fecha " +
+                "FROM actividad ac " +
+                "ORDER BY ac.fecha DESC");
             while(rs.next()){
                 results.add(fillActivity(rs));
             }
-        } catch (SQLException ex){} 
+        } catch (SQLException ex){
+            LOGGER.error(ex.toString());
+        }
         finally {
             if(rs != null) {
             try {
@@ -113,7 +117,9 @@ public class DatabaseConnector{
             while(rs.next()){
                 results = fillActivity(rs);
             }
-        } catch (SQLException ex){} 
+        } catch (SQLException ex){
+            LOGGER.error(ex.toString());
+        }
         finally {
             if(rs != null) {
             try {
@@ -151,7 +157,7 @@ public class DatabaseConnector{
                 results = new ActivitySide(rs.getInt("id"), rs.getString("nombre"));
             }
         } catch (SQLException ex){
-            ex.printStackTrace();
+            LOGGER.error(ex.toString());
         } 
         finally {
             if(rs != null) {
@@ -189,7 +195,9 @@ public class DatabaseConnector{
             while(rs.next()){
                 results = fillMultimedia(rs);
             }
-        } catch (SQLException ex){} 
+        } catch (SQLException ex){
+            LOGGER.error(ex.toString());
+        }
         finally {
             if(rs != null) {
             try {
@@ -226,7 +234,9 @@ public class DatabaseConnector{
             while(rs.next()){
                 results.add(fillMultimedia(rs));
             }
-        } catch (SQLException ex){} 
+        } catch (SQLException ex){
+            LOGGER.error(ex.toString());
+        }
         finally {
             if(rs != null) {
             try {
