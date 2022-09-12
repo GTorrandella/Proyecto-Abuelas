@@ -10,6 +10,7 @@ import AudioPage from './audio'
 import FilePage from './file'
 import VideoPage from './video'
 import ImagePage from './image'
+import SearchPage from './search';
 
 export default function Navigation() {
 
@@ -30,6 +31,9 @@ export default function Navigation() {
                 </Route>
                 <Route path="/archivo/:id">
                     <FilePage />
+                </Route>
+                <Route path="/busqueda">
+                    <SearchPage />
                 </Route>
                 <Route path="/">
                     <LandingPage />

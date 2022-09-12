@@ -44,3 +44,10 @@ export async function getTimeline(){
     const responseJson = await response.json()
     return responseJson
 }
+
+export async function search(input){
+    const url = "http://127.0.0.1:8080/api/search?q=" + input;
+    const response = await fetchWithTimeout(url, {})
+    const responseJson = await response.json()
+    return responseJson
+}
