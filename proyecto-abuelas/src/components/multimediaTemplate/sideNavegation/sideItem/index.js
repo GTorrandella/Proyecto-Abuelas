@@ -21,11 +21,7 @@ export default function SideItem(props) {
             (<ListItem>
                 <ListItemText
                 disableTypography={true}
-                style={{
-                    fontFamily: 'Anton',
-                    letterSpacing: '0.07rem',
-                    color: "dimgrey",
-                }} 
+                className={classes.deactivated} 
                 primary={title} />
             </ListItem>)
             :
@@ -33,11 +29,7 @@ export default function SideItem(props) {
                 <ListItem button onClick={handleClick}>
                     <ListItemText
                     disableTypography={true}
-                    style={{
-                        fontFamily: 'Anton',
-                        letterSpacing: '0.07rem',
-                        color: "black",
-                    }}
+                    className={classes.activated} 
                     primary={title} />
                     {open ? <ExpandLess /> : <ExpandMore />}
                 </ListItem>
@@ -52,11 +44,7 @@ export default function SideItem(props) {
                                     <Link to={path + item.id}>
                                         <ListItemText
                                         disableTypography={true}
-                                        style={{
-                                            fontFamily: 'Anton',
-                                            letterSpacing: '0.07rem',
-                                            color: "black",
-                                        }}
+                                        className={classes.activated} 
                                         primary={item.nombre}/>
                                     </Link>
                                 </ListItem>

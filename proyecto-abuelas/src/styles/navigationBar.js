@@ -35,6 +35,10 @@ export const searchStyle = makeStyles({
   root: {
     backgroundColor: "#b0c1db",
   },
+  input: {
+    fontFamily: 'Anton',
+    maxHeight:'1.2rem',
+  }
 });
 
 export const baseStyle = makeStyles({
