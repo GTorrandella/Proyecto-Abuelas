@@ -32,26 +32,27 @@ export default function SearchResultPage() {
   return (
     <React.Fragment>
       <Container maxWidth='md' className={searchPageStyle.root}>
+        {(data !== null) ? (
         <ImageList style={{margin: '5px'}}>
-          {(data !== null) ? 
-          (data.actividad.map((actividad) => (
-            <ImageListItem key={actividad.id}>
-              <img
-                src={``}
-                srcSet={``}
-                alt={actividad.nombre}
-                loading="lazy"
-              />
-              <ImageListItemBar
-                title={actividad.nombre}
-                position='bottom'
-              />
-            </ImageListItem>
-          ))):(<div>BUSQUEDA VACIA</div>)}
-        </ImageList>
+          {(data.actividad.map((actividad) => (
+          <ImageListItem key={actividad.id}>
+            <img
+              src={``}
+              srcSet={``}
+              alt={actividad.nombre}
+              loading="lazy"
+            />
+            <ImageListItemBar
+              title={actividad.nombre}
+              position='bottom'
+            />
+          </ImageListItem>)))}
+        </ImageList>) : 
+        (<div>BUSQUEDA VACIA</div>)}
       </Container>
     </React.Fragment>
   );
 }
+
 
 

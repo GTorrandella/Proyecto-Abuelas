@@ -1,44 +1,11 @@
-insert into 
-  Test.actividad (
-    nombre, 
-    fecha_inicio, 
-    fecha_fin, 
-    descripcion
-  )
-values
-  ( 
-    'Documentos 2019', 
-    STR_TO_DATE('2019-10-01', '%Y-%m-%d'),
-    STR_TO_DATE('2019-10-21', '%Y-%m-%d'),
-    'Docuemtos del año 2019'
-  );
-
-insert into 
-  Test.actividad (
-    nombre, 
-    fecha_inicio, 
-    fecha_fin, 
-    descripcion
-  )
-values
-  ( 
-    'Imagenes 2019', 
-    STR_TO_DATE('2019-03-01', '%Y-%m-%d'),
-    STR_TO_DATE('2019-04-01', '%Y-%m-%d'),
-    'Imagenes del año 2019'
-  );
-
-insert into 
-  Test.actividad (
-    nombre, 
-    fecha_inicio, 
-    fecha_fin, 
-    descripcion
-  )
-values
-  ( 
-    'Todo 2020', 
-    STR_TO_DATE('2020-06-01', '%Y-%m-%d'),
-    STR_TO_DATE('2019-06-03', '%Y-%m-%d'),
-    'Todo año 2020'
-  );
+INSERT INTO abuelas.actividad (nombre, descripcion, fecha) VALUES('UNO', 'Primera prueba', '2017-01-24 00:00:00');
+INSERT INTO abuelas.actividad (nombre, descripcion, fecha) VALUES('DOS', 'Segunda prueba', '2017-05-05 00:00:00');
+INSERT INTO abuelas.actividad (nombre, descripcion, fecha) VALUES('TRES', 'Tercera prueba', '2018-03-20 00:00:00');
+INSERT INTO abuelas.actividad (nombre, descripcion, fecha) VALUES('CUATRO', 'Cuarta prueba', '2019-04-25 00:00:00');
+INSERT INTO abuelas.actividad (nombre, descripcion, fecha) VALUES('CINCO', 'Quinta prueba', '2019-06-03 00:00:00');
+INSERT INTO abuelas.actividad (nombre, descripcion, fecha) VALUES('SEIS', 'Sexta prueba', '2019-07-10 00:00:00');
+INSERT INTO abuelas.actividad (nombre, descripcion, fecha) VALUES('SIETE', 'Septima prueba', '2019-08-03 00:00:00');
+INSERT INTO abuelas.actividad (nombre, descripcion, fecha) VALUES('OCHO', 'Octaba prueba', '2020-03-10 00:00:00');
+INSERT INTO abuelas.actividad (nombre, descripcion, fecha) VALUES('Documentos 2019', 'Docuemtos del año 2019', '2019-10-01 00:00:00');
+INSERT INTO abuelas.actividad (nombre, descripcion, fecha) VALUES('Imagenes 2019', 'Imagenes del año 2019', '2019-03-01 00:00:00');
+INSERT INTO abuelas.actividad (nombre, descripcion, fecha) VALUES('Todo 2020', 'Todo año 2020', '2020-06-01 00:00:00');

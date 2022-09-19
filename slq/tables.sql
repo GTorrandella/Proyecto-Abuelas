@@ -1,20 +1,20 @@
-CREATE TABLE actividad(  
-  id int NOT NULL primary key AUTO_INCREMENT comment 'primary key',
-  nombre VARCHAR(255) NOT NULL ,
-  fecha_inicio DATETIME COMMENT 'inicio de la actividad',
-  fecha_fin DATETIME COMMENT 'fin de la actividad',
-  descripcion varchar(255)
-) default charset utf8 comment '';
+CREATE TABLE `actividad` (
+  `id` int NOT NULL AUTO_INCREMENT COMMENT 'primary key',
+  `nombre` varchar(255) NOT NULL,
+  `descripcion` varchar(255) DEFAULT NULL,
+  `fecha` datetime DEFAULT NULL COMMENT 'inicio de la actividad',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE multimedia(  
-  id int NOT NULL primary key AUTO_INCREMENT comment 'primary key',
-  id_actividad int,
-  nombre VARCHAR(255) NOT NULL,
-  fecha DATETIME,
-  descripcion varchar(255),
-  archivo VARCHAR(255) NOT NULL,
-  tipo ENUM('PHOTO', 'VIDEO', 'AUDIO', 'FILE') NOT NULL,
-  FOREIGN KEY (id_actividad)
-      REFERENCES actividad(id)
-      ON UPDATE CASCADE ON DELETE CASCADE
-) default charset utf8 comment '';
+CREATE TABLE `multimedia` (
+  `id` int NOT NULL AUTO_INCREMENT COMMENT 'primary key',
+  `id_actividad` int DEFAULT NULL,
+  `nombre` varchar(255) NOT NULL,
+  `fecha` datetime DEFAULT NULL COMMENT 'creación del multimedia',
+  `descripcion` varchar(255) DEFAULT NULL,
+  `archivo` varchar(255) NOT NULL,
+  `tipo` enum('PHOTO','VIDEO','AUDIO','FILE') NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `id_actividad` (`id_actividad`),
+  CONSTRAINT `multimedia_ibfk_1` FOREIGN KEY (`id_actividad`) REFERENCES `actividad` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

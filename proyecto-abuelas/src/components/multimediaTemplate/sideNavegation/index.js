@@ -19,7 +19,7 @@ export default function SideNavegation(props) {
             <Container
                 className={classes.base}>
                 <Typography className={classes.text}>
-                    {activity ? activity['nombre'] : 'Entrevista con el Chavo del 8'}
+                    {activity ? activity['nombre'] : ''}
                 </Typography>
                 <List component="nav" className={classes.list}>
                     <SideItem classes={classes.item} title="Videos" items={videoElem} path='/video/' />
