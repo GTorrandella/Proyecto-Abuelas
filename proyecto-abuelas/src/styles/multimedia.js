@@ -35,6 +35,29 @@ const baseSideNavigator = {
     }
 }
 
+export const activityStyle = makeStyles({
+    base:{
+        ...baseSideNavigator.template
+    },
+    sideNavbase:{
+        borderColor: color['actions-blue'],
+        ...baseSideNavigator.container
+    },
+    sideNavtext:{
+        borderColor: color['actions-blue'],
+        ...baseSideNavigator.title
+    },
+    sideNavList:{
+        ...baseSideNavigator.list
+    },
+    sideNavItemActivated:{
+        ...baseSideNavigator.sideItemActivated
+    },
+    sideNavItemDeactivated:{
+        ...baseSideNavigator.sideItemdDetivated
+    },
+})
+
 export const multimediaStyle = makeStyles({
     base:{
         ...baseSideNavigator.template

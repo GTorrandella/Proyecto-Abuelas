@@ -22,6 +22,7 @@ export default function FilePage() {
 
     return (
         <React.Fragment>
+        {(data !== null) ? 
             <Base classes={{
                 base: className.base,
                 sideNav:{
@@ -35,7 +36,7 @@ export default function FilePage() {
                 }
             }}
             multimedia={<File data={data}/>}
-            multimediaId={id}/>
+            multimediaId={id}/> : <></>}
         </React.Fragment>
     );
 }

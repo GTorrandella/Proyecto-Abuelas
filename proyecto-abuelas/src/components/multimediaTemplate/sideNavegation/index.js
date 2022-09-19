@@ -3,6 +3,7 @@ import List from '@material-ui/core/List';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import SideItem from './sideItem'
+import { Link } from 'react-router-dom';
 
 export default function SideNavegation(props) {
     
@@ -11,16 +12,16 @@ export default function SideNavegation(props) {
     const audioElem = sideElem ? sideElem.filter(elem => elem.tipo === 'AUDIO') : []
     const photoElem = sideElem ? sideElem.filter(elem => elem.tipo === 'PHOTO') : []
     const fileElem = sideElem ? sideElem.filter(elem => elem.tipo === 'FILE') : []
-    
-    
 
     return (
         <React.Fragment>
             <Container
                 className={classes.base}>
-                <Typography className={classes.text}>
-                    {activity ? activity['nombre'] : ''}
-                </Typography>
+                <Link to={activity ? '/actividad/'+activity['id'] : ''}>
+                    <Typography className={classes.text}>
+                        {activity ? activity['nombre'] : ''}
+                    </Typography>
+                </Link>
                 <List component="nav" className={classes.list}>
                     <SideItem classes={classes.item} title="Videos" items={videoElem} path='/video/' />
                     <SideItem classes={classes.item} title="Audios" items={audioElem} path='/audio/' />

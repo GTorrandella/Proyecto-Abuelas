@@ -24,6 +24,7 @@ export default function VideoPage() {
 
     return (
         <React.Fragment>
+            {(data !== null) ? 
             <Base classes={{
                 base: className.base,
                 sideNav:{
@@ -37,7 +38,7 @@ export default function VideoPage() {
                 }
             }}
             multimedia={<Video data={data}/>}
-            multimediaId={id}/>
+            multimediaId={id}/> : <></>}
         </React.Fragment>
     );
 }

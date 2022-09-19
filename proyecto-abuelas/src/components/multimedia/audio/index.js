@@ -3,7 +3,7 @@ import ReactPlayer from 'react-player/soundcloud'
 
 export default function Audio(props) {
 
-    const { data } = props
+    const { data } = props;
 
     return (
         <React.Fragment>

@@ -22,6 +22,7 @@ export default function ImagePage() {
 
     return (
         <React.Fragment>
+            {(data !== null) ? 
             <Base classes={{
                 base: className.base,
                 sideNav:{
@@ -35,7 +36,7 @@ export default function ImagePage() {
                 }
             }}
             multimedia={<Image data={data}/>}
-            multimediaId={id}/>
+            multimediaId={id}/> : <></>}
         </React.Fragment>
     );
 }
