@@ -26,10 +26,10 @@ export default function NavigationSeachBar(props) {
     <div className={classes.text}>
       <InputBase
         className={classes.input}
-        placeholder={props.children}
+        placeholder={props.children[0]}
         onChange={handleChange}
         onKeyUp={handleEnter}
-        inputProps={{ 'aria-label': 'busqueda' }}
+        inputProps={{ 'aria-label': props.children[0]}}
       />
       <Button 
         className={classes.buttom}

@@ -48,7 +48,7 @@ export default function NavigationBar() {
         </Grid>
         <Grid item xs className={searchStyle().root}>
           <NavigationSeachBar>
-            BUSQUEDA
+            {["BUSQUEDA"]}
           </NavigationSeachBar>
         </Grid>
       </Grid>
