@@ -4,9 +4,11 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import { headerStyle } from '../../styles/header'
+import StringConstants from '../../locale';
 
 export default function Header() {
   
+  const strings = StringConstants();
   const classes = headerStyle()
 
   return (
@@ -15,7 +17,7 @@ export default function Header() {
           <a href='https://undav.edu.ar/index.php'>
             <img
               src={'/banners/logoUndav.png'} 
-              alt={'UNDAV Universidad Nacional de Avellaneda'} />
+              alt={strings.alt_img_undav} />
           </a>
           <Box display='flex' flexGrow={1} className={classes.baseFlex}>
             <a href='/'>
@@ -27,14 +29,14 @@ export default function Header() {
               <a href='/'>
                 <img
                   src={'/banners/tittle.png'}
-                  alt={'La UNDAV con las Abuelas por la identidad'} />
+                  alt={strings.alt_img_lemaExtension} />
               </a>
             </Box>
           </Box>
           <a href='https://www.abuelas.org.ar/'>
             <img
               src={'/banners/logoAbuelas.png'}
-              alt={'Abuelas de Plaza de Mayo'} />
+              alt={strings.atl_img_dibujoAbuelas} />
           </a>
         </Toolbar>
       </AppBar>
