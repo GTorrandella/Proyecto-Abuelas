@@ -1,20 +1,20 @@
 import React, {useState, useEffect} from 'react';
 import { useParams } from "react-router-dom";
 import {
-    getMultimedia,
+    getActivity,
 } from '../../connector';
-import Base from '../../components/multimediaTemplate'
-import Audio from '../../components/multimedia/audio'
-import { multimediaStyle } from '../../styles/multimedia';
+import Base from '../../components/multimediaTemplate';
+import Activity from '../../components/multimedia/activity';
+import { activityStyle } from '../../styles/multimedia';
 
-export default function AudioPage() {
+export default function ActivityPage() {
     const { id } = useParams();
     const [data, setData] = useState(null);
-    const className = multimediaStyle();
+    const className = activityStyle();
  
     useEffect(() => {
         const fetchData = async () => {
-            const result = await getMultimedia(id)
+            const result = await getActivity(id)
             setData(result);
         };
         fetchData();
@@ -22,7 +22,7 @@ export default function AudioPage() {
 
     return (
         <React.Fragment>
-            {(data !== null) ? 
+            {(data !== null) ?
             <Base classes={{
                 base: className.base,
                 sideNav:{
@@ -35,8 +35,8 @@ export default function AudioPage() {
                     }
                 }
             }}
-            multimedia={<Audio data={data}/>}
-            multimediaId={id}/> : <></>}
+            multimedia={<Activity data={data}/>}
+            activityId={id}/> : <></>}
         </React.Fragment>
     );
 }

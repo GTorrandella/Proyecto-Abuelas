@@ -1,8 +1,11 @@
 import * as React from 'react';
 import Container from '@material-ui/core/Container';
-import { landingPageStyle } from '../../styles/landingPage'
+import { landingPageStyle } from '../../styles/landingPage';
+import StringConstants from '../../locale';
 
 export default function LandingPage() {
+    
+    const strings = StringConstants();
     const classes = landingPageStyle();
 
     return (
@@ -10,11 +13,11 @@ export default function LandingPage() {
             <Container className={classes.grid}>
                 <img className={classes.image}
                   src={'/landing/dibujoAbuelas.png'} 
-                  alt={'Abuelas de Plaza de Mayo'}
+                  alt={strings.atl_img_dibujoAbuelas}
                   />
                 <img className={classes.image}
                   src={'/landing/lemaAbuelas.png'} 
-                  alt={'Memoria, Verdad y Justicia'}
+                  alt={strings.atl_img_lemaAbuelas}
                   />
             </Container>
         </React.Fragment>

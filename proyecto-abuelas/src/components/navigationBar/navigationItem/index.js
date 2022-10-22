@@ -14,7 +14,6 @@ export default function NavigationItem(props) {
 
   const handleToggle = (event) => {
     setOpen((prevOpen) => !prevOpen);
-    debugger
     if(!anchorEl){
       setAnchorEl(event.currentTarget.parentElement);
     }

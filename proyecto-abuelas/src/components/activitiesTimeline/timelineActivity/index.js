@@ -13,6 +13,7 @@ import {
   fifthBlockStyle,
   sixthBlockStyle
 } from '../../../styles/timeline';
+import { Link } from 'react-router-dom';
 
 export default function TimelineActivity(props){
   const { timilinePosition, yearBlockNumber, children } = props
@@ -49,15 +50,17 @@ export default function TimelineActivity(props){
       <TimelineItem>
         <TimelineOppositeContent style={{margin: '0px', padding: '0px'}}>
           <Box display='flex' alignContent='right' alignItems='center' flexDirection='row-reverse'>
-            <spam className={finalColor.photo}/>
-            <Box className={finalColor.blockLeft}>
-              <Typography>
-                {children[0]}
-              </Typography>
-              <Typography>
-                {children[1]}
-              </Typography>
-            </Box>
+              <spam className={finalColor.photo}/>
+              <Box className={finalColor.blockLeft}>
+                <Link to={'/actividad/'+children[2]}>
+                  <Typography>
+                    {children[0]}
+                  </Typography>
+                  <Typography>
+                    {children[1]}
+                  </Typography>
+                </Link>
+              </Box>
           </Box>
         </TimelineOppositeContent>
         <TimelineSeparator style={{margin: '0px', padding: '0px'}}>
@@ -80,15 +83,17 @@ export default function TimelineActivity(props){
         </TimelineSeparator>
         <TimelineContent style={{margin: '0px', padding: '0px'}}>
           <Box display='flex' alignContent='left' alignItems='center' flexDirection='row'>
-            <spam className={finalColor.photo}/>
-            <Box className={finalColor.blockRight}>
-              <Typography>
-                {children[0]}
-              </Typography>
-              <Typography>
-                {children[1]}
-              </Typography>
-            </Box>
+              <spam className={finalColor.photo}/>
+              <Box className={finalColor.blockRight}>
+                <Link to={'/actividad/'+children[2]}>
+                  <Typography>
+                    {children[0]}
+                  </Typography>
+                  <Typography>
+                    {children[1]}
+                  </Typography>
+                </Link>
+              </Box>
           </Box>
         </TimelineContent>
       </TimelineItem>

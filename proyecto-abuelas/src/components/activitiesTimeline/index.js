@@ -31,7 +31,7 @@ export default function ActivitiesTimeline() {
             }
             timeline = timeline.concat([
                 <TimelineActivity yearBlockNumber={blockYear} timilinePosition={i}>
-                    {[activityList[i].nombre, activityList[i].descripcion]}
+                    {[activityList[i].nombre, activityList[i].descripcion, activityList[i].id]}
                 </TimelineActivity>
             ])
         }

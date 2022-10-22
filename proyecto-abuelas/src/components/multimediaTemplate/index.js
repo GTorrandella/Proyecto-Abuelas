@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {
+    getActivity,
     getActivityByMultimediaId,
     getMultimediaByActivityId
 } from '../../connector';
@@ -7,21 +8,26 @@ import { Container, Grid } from '@material-ui/core'
 import SideNavegation from './sideNavegation'
 
 export default function Base(props) {
-    const { multimedia, multimediaId, classes } = props
+    const { multimedia, multimediaId, activityId, classes } = props
     const [activity, setActivity] = useState(null);
-    const [multimediaList, setMultimediaList] = useState(null)
+    const [multimediaList, setMultimediaList] = useState(null);
 
-    
- 
     useEffect(() => {
-        const fetchData = async () => {
+        const fetchDataMultimedia = async () => {
             const result = await getActivityByMultimediaId(multimediaId)
             setActivity(result);
         };
         if(multimediaId) {
-            fetchData();
+            fetchDataMultimedia();
         }
-    }, [multimediaId]);
+        const fetchDataActivity = async () => {
+            const result = await getActivity(activityId)
+            setActivity(result);
+        };
+        if(activityId) {
+            fetchDataActivity();
+        }
+    }, [multimediaId, activityId]);
  
     useEffect(() => {
         const fetchData = async () => {

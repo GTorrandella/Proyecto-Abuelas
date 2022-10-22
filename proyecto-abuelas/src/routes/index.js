@@ -1,16 +1,16 @@
 import React from "react";
 import {
-  BrowserRouter,
   Switch,
   Route,
 } from "react-router-dom";
-import LandingPage from '../components/landingPage'
-import ActivitiesTimeline from '../components/activitiesTimeline'
-import AudioPage from './audio'
-import FilePage from './file'
-import VideoPage from './video'
-import ImagePage from './image'
+import LandingPage from '../components/landingPage';
+import ActivitiesTimeline from '../components/activitiesTimeline';
+import AudioPage from './audio';
+import FilePage from './file';
+import VideoPage from './video';
+import ImagePage from './image';
 import SearchPage from './search';
+import ActivityPage from "./activity";
 
 export default function Navigation() {
 
@@ -31,6 +31,9 @@ export default function Navigation() {
                 </Route>
                 <Route path="/archivo/:id">
                     <FilePage />
+                </Route>
+                <Route path="/actividad/:id">
+                    <ActivityPage />
                 </Route>
                 <Route path="/busqueda">
                     <SearchPage />

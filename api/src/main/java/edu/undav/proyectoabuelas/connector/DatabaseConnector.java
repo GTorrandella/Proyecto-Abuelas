@@ -113,9 +113,10 @@ public class DatabaseConnector{
         try {
             stmt = conn.createStatement();
             rs = stmt.executeQuery(
-                "SELECT * " +
-                "FROM actividad " +
-                "WHERE id = " + id);
+                "SELECT ac.id, ac.nombre, ac.descripcion, " +
+                "YEAR(ac.fecha) AS anio, DATE(ac.fecha) AS fecha " +
+                "FROM actividad ac " +
+                "WHERE ac.id = " + id);
             while(rs.next()){
                 results = fillActivity(rs);
             }
