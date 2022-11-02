@@ -29,7 +29,7 @@ export default function NavigationSeachBar(props) {
         placeholder={props.children[0]}
         onChange={handleChange}
         onKeyUp={handleEnter}
-        inputProps={{ 'aria-label': props.children[0]}}
+        inputProps={{ 'aria-label': props.children[0], ...classes.input}}
       />
       <Button 
         className={classes.buttom}
