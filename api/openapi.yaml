@@ -1,0 +1,213 @@
+openapi: 3.0.3
+info:
+  title: Proyecto Abuelas - API
+  description: |-
+    Esta es el api utilizada por la página web de extensión universitaria de la UNDAV del projecto conjunto con Abuelas de Palaza de Mayo.
+  contact:
+    email: torrandellag@gmail.com
+  license:
+    name: MIT License
+    url: https://github.com/GTorrandella/Proyecto-Abuelas/blob/main/LICENSE
+  version: 1.0.11
+tags:
+  - name: actividad
+    description: Buscador de actividades
+  - name: multimedia
+    description: Buscador de multimedia
+  - name: timeline
+    description: Trae la información para construir la linea de tiempo
+  - name: search
+    description: Busca actividades y multimedia a partir de palabras clave
+paths:
+  /actividad/{id}:
+    get:
+      tags:
+        - actividad
+      description: Trae la actividad con identificador id
+      parameters:
+        - name: id
+          in: path
+          description: Identificador de la actividad a retornar
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: Operación existosa
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Actividad'
+        '404':
+          description: Actividad no encontrada
+  /actividad:
+    get:
+      tags:
+        - actividad
+      description: Trae la actividad que contiene un multimedia especifico
+      parameters:
+        - name: multimedia
+          in: query
+          description: Identificador de un multimedia
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: Operación existosa
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Actividad'
+        '404':
+          description: Multimedia no encontrado
+  /multimedia/{id}:
+    get:
+      tags:
+        - multimedia
+      description: Trae el multimedia con identificador id
+      parameters:
+        - name: id
+          in: path
+          description: Identificador del multimedia a retornar
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: Operación existosa
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Multimedia'
+        '404':
+          description: Multimedia no encontrado
+  /multimedia:
+    get:
+      tags:
+        - multimedia
+      description: Trae los multimedias que pertenecen a una actividad especifica
+      parameters:
+        - name: actividad
+          in: query
+          description: Identificador de una actividad
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: Operación existosa
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Multimedia'
+        '404':
+          description: Actividad no encontrada
+  /timeline:
+    get:
+      tags:
+        - timeline
+      description: |-
+        Trae todo el contenido que contiene a alguna de las palabras clave en el nombre o la descripción.
+        En caso de no encontrar nada, los objetos retornan como listas vacías.
+      parameters:
+        - name: q
+          in: query
+          description: Palabras clave a buscar
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Operación existosa
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Actividad'
+  /search:
+    get:
+      tags:
+        - search
+      summary: Trae todas la activides, ordenadas por su fecha de manera desendente
+      responses:
+        '200':
+          description: Operación existosa
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  actividad:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Actividad'
+                  multimedia:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Multimedia'
+        '404':
+          description: Multimedia no encontrado
+components:
+  schemas:
+    Actividad:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          example: 10
+        nombre:
+          type: string
+          description: Nombre de la actividad
+          example: Entrevista con Juan Perez
+        fecha:
+          type: string
+          format: date
+          example: 2017-09-28
+        year:
+          type: string
+          format: year
+          example: 2017
+        descripcion:
+          type: string
+          description: Descripción de la activiadad
+          example: Entrevista ocurrida el 28 de septiembre de 2017
+    Multimedia:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          example: 14
+        nombre:
+          type: string
+          description: Nombre de la actividad
+          example: Foto_1
+        descripcion:
+          type: string
+          description: Descripción de la activiadad
+          example: Foto tomada durante la entrevista con Juan Perez
+        archivo:
+          type: string
+          description: Path o url al archivo a mostrar
+          example: /photos/Foto_1.jpg
+        tipo:
+          type: string
+          description: Tipo de multimedia
+          example: photo
+          enum:
+            - photo
+            - video
+            - audio
+            - file
