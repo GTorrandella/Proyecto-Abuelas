@@ -6,6 +6,7 @@ import Grow from '@material-ui/core/Grow';
 import Paper from '@material-ui/core/Paper';
 import Popper from '@material-ui/core/Popper';
 import MenuList from '@material-ui/core/MenuList';
+import { Link } from 'react-router-dom';
 import MenuButton from '../menuButton';
 
 export default function NavigationMenu(props) {
@@ -16,6 +17,20 @@ export default function NavigationMenu(props) {
       //setOpen(false);
     }
   }
+
+  const fillMenu = (items) => {
+    debugger
+    let menu = []
+    items.forEach((item) => {
+      menu.push(
+      <Link to={item.link}>
+        <MenuButton onClick={props.handleClose} >{item.title}</MenuButton>
+      </Link>
+      )
+    });
+    return menu;
+  }
+
 
   return (
     <React.Fragment>
@@ -33,7 +48,7 @@ export default function NavigationMenu(props) {
             <Paper>
               <ClickAwayListener onClickAway={props.handleClose}>
                 <MenuList autoFocusItem={props.open} onKeyDown={handleListKeyDown}>
-                  <MenuButton onClick={props.handleClose}>PLACEHOLDER</MenuButton>
+                  { (props.children) ? fillMenu(props.children) : null }
                 </MenuList>
               </ClickAwayListener>
             </Paper>

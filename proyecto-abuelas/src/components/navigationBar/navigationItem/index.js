@@ -14,7 +14,7 @@ export default function NavigationItem(props) {
 
   const handleToggle = (event) => {
     setOpen((prevOpen) => !prevOpen);
-    if(!anchorEl){
+    if (!anchorEl) {
       setAnchorEl(event.currentTarget.parentElement);
     }
   };
@@ -30,17 +30,24 @@ export default function NavigationItem(props) {
   return (
     <div className={classes.text}>
       {props.children[0]}
-      <Button
-        className={classes.buttom}
-        aria-controls={open ? 'menu-list-grow' : undefined}
-        aria-haspopup="true"
-        onClick={handleToggle}>
-          {open ? <ExpandLess /> : <ExpandMore />}
-      </Button>
-      <NavigationMenu 
-        anchorElem={anchorEl}
-        open={open}
-        handleClose={handleClose}/>
+      {
+        (props.nomenu) ? null :
+          <>
+            <Button
+              className={classes.buttom}
+              aria-controls={open ? 'menu-list-grow' : undefined}
+              aria-haspopup="true"
+              onClick={handleToggle}>
+              {open ? <ExpandLess /> : <ExpandMore />}
+            </Button>
+            <NavigationMenu
+              anchorElem={anchorEl}
+              open={open}
+              handleClose={handleClose}>
+              {props.children[1]}
+            </NavigationMenu>
+          </>
+      }
     </div>
   );
 }

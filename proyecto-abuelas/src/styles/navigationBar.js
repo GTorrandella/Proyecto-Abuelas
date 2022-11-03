@@ -44,10 +44,10 @@ export const searchStyle = makeStyles({
 export const baseStyle = makeStyles({
   text: {
     display: 'flex',
-    maxHeight: '2rem',
     letterSpacing: '0.1rem',
     fontFamily: 'Anton',
     alignItems: 'center',
+    alignContent: 'center',
     paddingLeft: '1rem',
   },
   buttom: {
